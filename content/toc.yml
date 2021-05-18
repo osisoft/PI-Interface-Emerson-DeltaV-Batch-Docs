@@ -18,7 +18,7 @@
   href: command-line-parameter-reference.md
 - name: Initialization file reference
   href: initialization-file-reference/toc.yml
-  topicHref: initialization-file-reference.md
+  topicHref: initialization-file-reference/initialization-file-reference.md
 - name: Diagnostic tag reference
   href: diagnostic-tag-reference.md
 - name: Event file monitor utility
