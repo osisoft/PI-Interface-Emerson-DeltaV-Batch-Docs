@@ -1,5 +1,5 @@
 ---
-uid: RecipeTemplates
+uid: RecipeTemplatesBatch
 ---
 
 # Recipe templates

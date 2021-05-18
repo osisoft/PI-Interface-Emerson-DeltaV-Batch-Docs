@@ -1,5 +1,5 @@
 ---
-uid: LinkTemplates
+uid: LinkTemplatesBatch
 ---
 
 # Link templates

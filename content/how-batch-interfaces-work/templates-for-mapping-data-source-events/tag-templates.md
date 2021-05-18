@@ -1,5 +1,5 @@
 ---
-uid: TagTemplates
+uid: TagTemplatesBatch
 ---
 
 # Tag templates
