@@ -1,6 +1,5 @@
+- name: Interface configuration
+  href: interface-configuration.md
 - name: Installation prerequisites
-  href: Installationprerequisites.md
-- name: Installation prerequisites sub-chapter
-  href: Installation prerequisites/toc.yml
-- name: Assign permissions sub-chapter
-  href: Assign permissions sub-chapter/toc.yml
+  href: installation-prerequisites/toc.yml
+  topicHref: installation-prerequisites.md

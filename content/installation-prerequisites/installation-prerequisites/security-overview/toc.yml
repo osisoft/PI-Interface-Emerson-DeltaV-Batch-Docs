@@ -1,0 +1,6 @@
+- name: Assign permissions for user accounts and PI points
+  href: assign-permissions.md
+- name: Configure security for PI Asset Framework
+  href: configure-security-for-pi-af.md
+- name: Configure security for PI Data Archive
+  href: configure-security-for-pi-data-archive.md

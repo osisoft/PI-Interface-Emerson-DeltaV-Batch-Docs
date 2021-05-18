@@ -1,4 +1,2 @@
-- name: Introduction
-  href: Introduction.md
-- name: Introduction sub-chapter
-  href: Introduction sub-chapter/toc.yml
+- name: Supported features
+  href: supported-features.md
