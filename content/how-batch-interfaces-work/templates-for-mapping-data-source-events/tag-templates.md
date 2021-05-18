@@ -1,5 +1,5 @@
 ---
-uid: TagTemplatesUID
+uid: TagTemplates
 ---
 
 # Tag templates
