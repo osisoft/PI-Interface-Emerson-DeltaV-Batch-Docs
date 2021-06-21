@@ -17,18 +17,14 @@
   - topicUid: BIF_PIServerConnectivity # No modifications
   - topicUid: BIF_LoggingAndErrorMessages # No modifications
 # How Batch Interfaces Work
-- topicUid: BIF_HowBatchInterfacesWork # No modifications required
+- topicUid: BIF_HowBatchInterfacesWork # No modifications
   items:
-  - topicUid: BIF_HowInterfacesProcessBatchEventData # No modifications required
-    items: 
-    - topicUid: BIF_InterfaceModes # No modifications required
-    - topicUid: BIF_HowBatchDataIsStored # Modify for interface
-      items:
-      - topicUid: BIF_EventFrames # No modifications required
-    - topicUid: BIF_EquipmentHierarchy # No modifications required
-    - topicUid: BIF_HowToMergeMultipleSourceBatches # No modifications required
-    - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications required
-  - topicUid: BIF_TemplatesForMappingDataSourceEvents
+  - topicUid: BIF_HowInterfacesProcessBatchEventData # No modifications
+    items:
+    - topicUid: BIF_HowToMergeMultipleSourceBatches # No modifications
+    - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications
+  - topicUid: BIF_TemplatesForMappingDataSourceEvents # No modifications
+  - topicUid: BIF_HowBatchDataIsStored # No modifications
 # Specific Considerations
 - topicUid: BIF_WorkflowSupport # Modify for interface
   items:
