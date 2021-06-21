@@ -1,21 +1,21 @@
 # Introduction
 - topicUid: BIF_Introduction # Customized for DeltaV
   items:
-  - topicUid: BIF_InterfaceModes # No modifications required
-  - topicUid: BIF_SupportedFeatures # Modify for interface
+  - topicUid: BIF_InterfaceModes # No modifications
+  - topicUid: BIF_SupportedFeatures # Customized for DeltaVSSS
   - topicUid: BIF_ReferenceManuals # Customized for DeltaV
 # Installation Prerequisites
-- topicUid: BIF_InterfaceConfiguration # Modify for interface
+- topicUid: BIF_InterfaceConfiguration # Customized for DeltaV
   items: 
-  - topicUid: BIF_InstallationPrerequisites # No modifications required
-  - topicUid: BIF_SecurityOverview # No modifications required
+  - topicUid: BIF_InstallationPrerequisites # No modifications
+  - topicUid: BIF_SecurityOverview # No modifications
     items:
-      - topicUid: BIF_AssignPermissions # No modifications required
-      - topicUid: BIF_ConfigureSecurityForPIAF # No modifications required
-      - topicUid: BIF_ConfigureSecurityForPIDataArchive # No modifications required
-  - topicUid: BIF_CreateAndConfigureInterfaceInstance # No modifications required
-  - topicUid: BIF_PIServerConnectivity # No modifications required
-  - topicUid: BIF_LoggingAndErrorMessages # No modifications required
+      - topicUid: BIF_AssignPermissions # No modifications
+      - topicUid: BIF_ConfigureSecurityForPIAF # No modifications
+      - topicUid: BIF_ConfigureSecurityForPIDataArchive # No modifications
+  - topicUid: BIF_CreateAndConfigureInterfaceInstance # No modifications
+  - topicUid: BIF_PIServerConnectivity # No modifications
+  - topicUid: BIF_LoggingAndErrorMessages # No modifications
 # How Batch Interfaces Work
 - topicUid: BIF_HowBatchInterfacesWork # No modifications required
   items:

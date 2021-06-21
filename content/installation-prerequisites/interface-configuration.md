@@ -4,30 +4,30 @@ uid: BIF_InterfaceConfiguration
 
 # Batch interface configuration
 
-<!-- Interface-specific framework topic. Customize this topic for your interface. Remove the diagrams that don't apply -->
+<!-- Customized for DeltaV -->
 
 The following diagrams illustrate various options for configuring batch interfaces, depending on the data source and the desired PI System output.
 
-![Interfacemodes](../images/batch-interface-configuration-1.png)
+![Interfacemodes](../images/EventfilestargetPIBatchDB.png)
 
 Data source: event files. Target: PI batch database
 
-![Interfacemodes](../images/batch-interface-configuration-2.png)
+![Interfacemodes](../images/EventfilestargetPIAF.png)
 
 Data source: event files. Target: PI AF (event frames and assets)
 
-![Interfacemodes](../images/batch-interface-configuration-3.png)
+![Interfacemodes](../images/SQLservertargetsPIBatchDB.png)
 
 Data source: SQL Server. Target: PI batch database
 
-![Interfacemodes](../images/batch-interface-configuration-4.png)
+![Interfacemodes](../images/SQLservertargetsPIAF.png)
 
 Data source: SQL Server. Target: PI AF (event frames and assets)
 
-![Interfacemodes](../images/batch-interface-configuration-5.png)
+![Interfacemodes](../images/SQLserverAlarmsandEventstargetsPIBatchDB.png)
 
 Data source: SQL Server + alarms and events server. Target: PI batch database
 
-![Interfacemodes](../images/batch-interface-configuration-6.png)
+![Interfacemodes](../images/SQLserverAlarmsandEventstargetsPIAF.png)
 
 Data source: SQL Server + alarms and events server. Target: PI AF (event frames and assets)
