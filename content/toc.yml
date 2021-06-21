@@ -1,9 +1,9 @@
 # Introduction
-- topicUid: BIF_Introduction # Modify for interface
+- topicUid: BIF_Introduction # Customized for DeltaV
   items:
   - topicUid: BIF_InterfaceModes # No modifications required
   - topicUid: BIF_SupportedFeatures # Modify for interface
-  - topicUid: BIF_ReferenceManuals # Modify for interface
+  - topicUid: BIF_ReferenceManuals # Customized for DeltaV
 # Installation Prerequisites
 - topicUid: BIF_InterfaceConfiguration # Modify for interface
   items: 

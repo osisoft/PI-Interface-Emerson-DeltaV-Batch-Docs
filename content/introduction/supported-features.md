@@ -4,14 +4,22 @@ uid: BIF_SupportedFeatures
 
 # Supported features
 
-<!-- Add custom intro for interface -->
+<!-- Customized for DeltaV -->
 
+Platforms: (32-bit or 64-bit in emulation mode)
+
+* Windows 2008 and Windows 2008 R2
+* Windows 7
+* Windows 8
+* Windows Server 2012
+* Windows 10
+
+No native 64-bit builds of the interfaces are available. 
 
 <!-- Content below applies to all batch interfaces -->
 
 | Feature | Support |
 | ------- | ------- |
-| Part Number | <UPDATE_FOR_INTERFACE> |
 | Auto-creates PI Points and equipment assets? | Yes |
 | Point Builder Utility | No |
 | Stores batch data in PIBatch Database and PI Module Database | No |
