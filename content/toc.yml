@@ -26,6 +26,10 @@
   - topicUid: BIF_TemplatesForMappingDataSourceEvents # No modifications
   - topicUid: BIF_HowBatchDataIsStored # No modifications
 # Specific Considerations
+#
+# Note: Depending on inteface, this section either begins with BIF_Interface or BIF_WorkflowSupport
+#
+- topicUid: BIF_Interface # Modify for interface
 - topicUid: BIF_WorkflowSupport # Modify for interface
   items:
   - topicUid: BIF_DataSources # Modify for interface
