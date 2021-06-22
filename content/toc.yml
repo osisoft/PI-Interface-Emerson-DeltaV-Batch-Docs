@@ -34,17 +34,16 @@
 # PI Event Frames Interface Manager
 - topicUid: BIF_PIEventFramesInterfaceManager # No modifications
   items:
-  - topicUid: BIF_ServerInformationTab # No modifications required
+  - topicUid: BIF_ServerInformationTab # No modifications
   - topicUid: BIF_SourceTab # Customized for DeltaV
   - topicUid: BIF_TemplatesTab # Customized for DeltaV
-    items: 
-    - topicUid: BIF_TagTemplates # Modify for interface
-    - topicUid: BIF_PropertyTemplates # Modify for interface
-    - topicUid: BIF_EventFramesLinkTemplates # Modify for interface
-    - topicUid: BIF_RecipeTemplatesEFIM # Modify for interface
-      items: 
-      - topicUid: BIF_DefineRecipeTemplates # Modify for interface
-    - topicUid: BIF_Triggers # Modify for interface
+    items:
+    - topicUid: BIF_AlarmTagTemplates # No modifications
+      items:
+      - topicUid: BIF_Triggers # No modifications
+    - topicUid: BIF_PropertyTemplatesEFIM # No modifications
+    - topicUid: BIF_RecipeTemplatesEFIM # No modifications
+    - topicUid: BIF_TagTemplatesEFIM # No modifications
   - topicUid: BIF_FiltersTab # Modify for interface
   - topicUid: BIF_TimeSettingsTab # Modify for interface
   - topicUid: BIF_BatchSetupTab # Modify for interface

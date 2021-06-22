@@ -1,0 +1,8 @@
+- name: Emerson DeltaV batch data sources
+  href: emerson-deltav-batch-data-sources.md
+- name: Emerson Syncade data sources
+  href: emerson-syncade-data-sources.md
+- name: Emerson start and stop events
+  href: emerson-start-and-stop-events.md
+- name: Emerson template placeholders
+  href: emerson-template-placeholders.md
