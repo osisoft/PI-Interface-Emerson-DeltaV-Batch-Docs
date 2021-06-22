@@ -4,11 +4,11 @@ uid: BIF_CommandLineParameterReference
 
 # Command line parameter reference
 
-<!-- Topic requires customization for specific interface -->
+<!-- Customized for DeltaV. Commented out commands don't apply to DeltaV -->
 
 To configure an interface, you use the PI Event Frames Interface Manager, which maintains the files that contain batch interface settings. This appendix describes the command line settings and is provided for troubleshooting purposes.
     
-To ensure that settings files are formatted correctly, always use PI Event Frames Interface Manager to configure settings. Do not edit settings files manually.
+**Note:** To ensure that settings files are formatted correctly, always use PI Event Frames Interface Manager to configure settings. Do not edit settings files manually.
 
 The following table is a compilation of the command line settings for all the OSIsoft batch framework interfaces. Some settings are specific to an interface. To list the settings supported by your interface, invoke its executable at the command line, specifying the -? flag.
 
@@ -24,9 +24,13 @@ The following headings describe each command line parameter available.
 
 (Optional) Enable the creation of unit batches for recipes in units that are allocated at the phase level rather than the unit batch level. By default, the interface requires the unit name to be present in the unit batch start event. When you enable /adu, the interface creates the unit batch and defers setting the unit name until the phase-level allocation event arrives.
 
+<!-- 
+
 ### `/batchrcp =[true | false]` 
 
-(ABB only) Collect full task hierarchy. By default, the interface collects four levels. For details, refer to ABB 800xA batch start and stop events.
+(ABB only) Collect full task hierarchy. By default, the interface collects four levels. For details, refer to ABB 800xA batch start and stop events. 
+
+-->
 
 ### `/bidm =<list>` 
 
@@ -49,7 +53,7 @@ The following list shows example masks and resulting data.
 | Mask | Result |
 | ---- | ------ |
 | "######" | 30112 |
-| "###@!" | 90dev |
+| "##@!" | 90dev |
 | "*###@!" | lot30112 / 90dev |
 | "@@@@, #8dev4, #!" | 30112 |
 
@@ -126,9 +130,9 @@ Examples:
 
 (Required) Specify a one- to nine-number identifier for the interface instance. Assigned to the Location1 attribute of tags that are updated by the interface instance.
 
-### `/includeincompletedata`
+<!-- ### `/includeincompletedata`
 
-(Optional) Enables the collection of all unit procedures without and associated UNIT. Without this option unit procedures that do not have phase state that associated with a particular UNIT will not be shown as events in PI AF.
+(Optional) Enables the collection of all unit procedures without and associated UNIT. Without this option unit procedures that do not have phase state that associated with a particular UNIT will not be shown as events in PI AF. -->
 
 ### `/inifile =<path>`
 
@@ -320,7 +324,9 @@ Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedur
 
 (Optional) Specifies, in seconds, how often to scan the data source for new data. The default is 60 seconds. A scan that returns a large amount of data can cause the interface to skip the subsequent scan.
 
-### `/singlerun` | (Optional) Perform one scan and stop.
+### `/singlerun` 
+
+(Optional) Perform one scan and stop.
 
 ### `/smp ="equipment path"`
 
@@ -368,8 +374,9 @@ If /UBR = true the interface will use SYSTEM MESSAGE to control the start and en
 
 If /UBR = false the interface will use STATE CHANGE to control the start and end of event frames. Example State Change messages are RUNNING, REMOVED, ABORTED, COMPLETE, STOPPED, and ABANDON. The interface will combine the state change with the recipe ( Batch, UnitProcedure, Operation, Phase ) to determine which recipe step has changed state.
 
-Provided for backward compatibility with version 1.0.0.0 of the interface. |
+Provided for backward compatibility with version 1.0.0.0 of the interface.
 
+<!-- 
 ### `/WEBSRVDISABLED=[true | false]` 
 
 (Optional) If not added it will default to false.
@@ -382,4 +389,4 @@ Added in version 4.0.30.
 
 Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure /writelink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /readlink setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
 
-For a BES interface controlling one or more MES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link.
+For a BES interface controlling one or more MES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link. -->
