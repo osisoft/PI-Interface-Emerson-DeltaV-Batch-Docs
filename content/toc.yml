@@ -1,30 +1,65 @@
-- name: PI Interface for Emerson DeltaV Batch
-  href: index.md
-- name: Introduction
-  href: Introduction/toc.yml
-  topicHref: introduction/introduction.md
-- name: Installation prerequisites
-  href: installation-prerequisites/toc.yml
-- name: How batch interfaces work
-  href: how-batch-interfaces-work/toc.yml
-  href: how-batch-interfaces-work/how-batch-interfaces-work.md
-- name: Emerson DeltaV Batch and DeltaV Syncade interfaces
-  href: specific-considerations-for-emdvb/toc.yml
-  topicHref: specific-considerations-for-emdvb/emerson-deltav-batch-and-deltav-syncade-interfaces.md
-- name: PI Event Frames Interface Manager
-  href: pi-event-frames-interface-manager/toc.yml
-  topicHref: pi-event-frames-interface-manager/pi-event-frames-interface-manager.md
-- name: Command-line parameter reference
-  href: command-line-parameter-reference.md
-- name: Initialization file reference
-  href: initialization-file-reference/toc.yml
-  topicHref: initialization-file-reference/initialization-file-reference.md
-- name: Diagnostic tag reference
-  href: diagnostic-tag-reference.md
-- name: Event file monitor utility
-  href: event-file-monitor-utility.md
-- name: Glossary
-  href: glossary.md
-- name: Technical support and feedback
-  href: technical-support-and-feedback.md
-
+# Introduction
+- topicUid: BIF_Introduction # Customized for DeltaV
+  items:
+  - topicUid: BIF_InterfaceModes # No modifications
+  - topicUid: BIF_SupportedFeatures # Customized for DeltaV
+  - topicUid: BIF_ReferenceManuals # Customized for DeltaV
+# Installation Prerequisites
+- topicUid: BIF_InterfaceConfiguration # Customized for DeltaV
+  items: 
+  - topicUid: BIF_InstallationPrerequisites # No modifications
+  - topicUid: BIF_SecurityOverview # No modifications
+    items:
+      - topicUid: BIF_AssignPermissions # No modifications
+      - topicUid: BIF_ConfigureSecurityForPIAF # No modifications
+      - topicUid: BIF_ConfigureSecurityForPIDataArchive # No modifications
+  - topicUid: BIF_CreateAndConfigureInterfaceInstance # No modifications
+  - topicUid: BIF_PIServerConnectivity # No modifications
+  - topicUid: BIF_LoggingAndErrorMessages # No modifications
+# How Batch Interfaces Work
+- topicUid: BIF_HowBatchInterfacesWork # No modifications
+  items:
+  - topicUid: BIF_HowInterfacesProcessBatchEventData # No modifications
+    items:
+    - topicUid: BIF_HowToMergeMultipleSourceBatches # No modifications
+    - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications
+  - topicUid: BIF_TemplatesForMappingDataSourceEvents # No modifications
+  - topicUid: BIF_HowBatchDataIsStored # No modifications
+# Specific Considerations
+- topicUid: BIF_Interface # Customized for DeltaV
+  items:
+  - topicUid: BIF_DataSources # Customized for DeltaV
+  - topicUid: BIF_StartAndStopEvents # Customized for DeltaV
+  - topicUid: BIF_TemplatePlaceholders # Customized for DeltaV
+# PI Event Frames Interface Manager
+- topicUid: BIF_PIEventFramesInterfaceManager # No modifications
+  items:
+  - topicUid: BIF_ServerInformationTab # No modifications
+  - topicUid: BIF_SourceTab # Customized for DeltaV
+  - topicUid: BIF_TemplatesTab # Customized for DeltaV
+    items:
+    - topicUid: BIF_AlarmTagTemplates # No modifications
+      items:
+      - topicUid: BIF_Triggers # No modifications
+    - topicUid: BIF_PropertyTemplatesEFIM # No modifications
+    - topicUid: BIF_RecipeTemplatesEFIM # No modifications
+    - topicUid: BIF_TagTemplatesEFIM # No modifications
+  - topicUid: BIF_FiltersTab # No modification
+  - topicUid: BIF_TimeSettingsTab # No modification
+  - topicUid: BIF_BatchSetupTab # Customized for DeltaV
+  - topicUid: BIF_OperationalSettingsTab # No modifications
+  - topicUid: BIF_TestConfigurationTab # No modifications
+# Command Line Parameters
+- topicUid: BIF_CommandLineParameterReference # Customized for DeltaV
+# Initialization File
+- topicUid: BIF_InitializationFileReference # Customized for DeltaV
+  items: 
+  - topicUid: BIF_InitializationFileExamples # Customized for DeltaV
+# Diagnostic Point Reference
+- topicUid: BIF_DiagnosticPointReference # No modifications
+# Event file monitor utility
+- topicUid: BIF_EventFileMonitorUtility # No modifications
+# Glossary
+- topicUid: BIF_Glossary
+# Technical Support and Feedback
+- topicUid: BIF_TechnicalSupportAndFeedback

@@ -1,8 +1,10 @@
 ---
-uid: TestConfigurationTab
+uid: BIF_TestConfigurationTab
 ---
 
 # Test configuration tab
+
+<!-- Topic requires customization for specific interface -->
 
 You test the configuration settings in the Test Configuration tab.
 

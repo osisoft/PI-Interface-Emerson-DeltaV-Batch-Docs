@@ -1,8 +1,10 @@
 ---
-uid: TemplatesForMappingDataSourceEvents
+uid: BIF_TemplatesForMappingDataSourceEvents
 ---
 
 # Templates for mapping data source events
+
+<!-- Static content. Usually requires no modifications -->
 
 Templates enable you to capture data from the data source, specifying the format for the desired data and the events that cause the interface to capture the data. To configure templates, go to the PI Event Frame Interface Manager Templates tab. You can define the following types of templates:
 

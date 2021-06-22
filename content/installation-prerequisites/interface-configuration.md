@@ -1,8 +1,10 @@
 ---
-uid: InterfaceConfiguration
+uid: BIF_InterfaceConfiguration
 ---
 
-# Interface configuration
+# Batch interface configuration
+
+<!-- Customized for DeltaV -->
 
 The following diagrams illustrate various options for configuring batch interfaces, depending on the data source and the desired PI System output.
 
