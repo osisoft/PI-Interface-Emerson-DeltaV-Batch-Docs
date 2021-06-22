@@ -46,11 +46,9 @@
     - topicUid: BIF_TagTemplatesEFIM # No modifications
   - topicUid: BIF_FiltersTab # No modification
   - topicUid: BIF_TimeSettingsTab # No modification
-  - topicUid: BIF_BatchSetupTab # Modify for interface
-  - topicUid: BIF_MergeSetupTab # Modify for interface
-  - topicUid: BIF_OperationalSettingsTab # Modify for interface
-  - topicUid: BIF_TestConfigurationTab # Modify for interface
-  - topicUid: BIF_ServiceConfigurationTab # Modify for interface
+  - topicUid: BIF_BatchSetupTab # Customized for DeltaV
+  - topicUid: BIF_OperationalSettingsTab # No modifications
+  - topicUid: BIF_TestConfigurationTab # No modifications
 # Command Line Parameters
 - topicUid: BIF_CommandLineParameterReference # Modify for interface
 # Initialization File
