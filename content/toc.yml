@@ -44,8 +44,8 @@
     - topicUid: BIF_PropertyTemplatesEFIM # No modifications
     - topicUid: BIF_RecipeTemplatesEFIM # No modifications
     - topicUid: BIF_TagTemplatesEFIM # No modifications
-  - topicUid: BIF_FiltersTab # Modify for interface
-  - topicUid: BIF_TimeSettingsTab # Modify for interface
+  - topicUid: BIF_FiltersTab # No modification
+  - topicUid: BIF_TimeSettingsTab # No modification
   - topicUid: BIF_BatchSetupTab # Modify for interface
   - topicUid: BIF_MergeSetupTab # Modify for interface
   - topicUid: BIF_OperationalSettingsTab # Modify for interface
