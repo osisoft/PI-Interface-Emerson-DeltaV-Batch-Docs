@@ -74,3 +74,7 @@
 - topicUid: BIF_DiagnosticPointReference # No modifications required
 # Event file monitor utility
 - topicUid: BIF_EventFileMonitorUtility # No modifications required
+# Glossary
+- topicUid: BIF_Glossary
+# Technical Support and Feedback
+- topicUid: BIF_TechnicalSupportAndFeedback
