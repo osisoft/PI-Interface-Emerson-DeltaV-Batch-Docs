@@ -63,6 +63,10 @@ Specifies how often the interface retries failed attempts to write data. The def
 
 Specifies how long the interface continues retrying an attempt to write data. To avoid data loss, set to 0 (default, no timeout). 
 
+<!--
+
+Mark Bishop 6/21/21: SQL Settings used sometimes
+
 ## SQL server connection settings
 
 ### SQL connection timeout (/PICONNTO=<seconds>)
@@ -71,4 +75,6 @@ Override the default SQL Connection TimeOut property.
 
 ### SQL data access timeout (/PIDATO=<seconds>)
 
-Override the default SQL Data Access TimeOut property. 
+Override the default SQL Data Access TimeOut property.  
+
+-->
