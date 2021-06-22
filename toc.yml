@@ -47,6 +47,7 @@
     items:
     - topicUid: BIF_WindowsCredentialManagerAuthentication # Modify for interface
   - topicUid: BIF_SourceTab # Modify for interface
+  - topicUid: BIF_AlarmTagTemplates # Modify for interface
   - topicUid: BIF_TemplatesTab # Modify for interface
     items: 
     - topicUid: BIF_TagTemplates # Modify for interface
