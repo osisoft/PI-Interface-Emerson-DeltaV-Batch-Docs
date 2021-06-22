@@ -4,7 +4,7 @@ uid: BIF_InitializationFileExamples
 
 # Initialization file examples
 
-<!-- Topic requires customization for specific interface -->
+<!-- Customized for DeltaV -->
 
 ## Multiple EVT Sources
 

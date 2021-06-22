@@ -4,7 +4,7 @@ uid: BIF_InitializationFileReference
 
 # Initialization file reference
 
-<!-- Topic requires customization for specific interface -->
+<!-- Customized for DeltaV -->
 
 The initialization (.ini) file stores configuration information for an interface instance. This file is generated and updated by the PI Event Frame Interface Manager configuration tool. To enable you to control access to these files, initialization files are stored under the ProgramData folder. (Note that, prior to release 4.x, initialization files were stored in the interface installation directory.)
 
@@ -237,7 +237,7 @@ Advanced parsing:
 Property[1].Value = [BatchID] | event: [*,value="State*"] | [Descript] | val: [Pval]
 ```
 
-**Note:** For SQL dta sources with the "Use original batch event view" option enabled (/UOBEV), you cannot use the [PVAL] or [EU] placeholders. To obtain this data you must parse it from the [DESCRIPT] placeholder.
+**Note:** For SQL data sources with the "Use original batch event view" option enabled (/UOBEV), you cannot use the [PVAL] or [EU] placeholders. To obtain this data you must parse it from the [DESCRIPT] placeholder.
 
 **Valid Placeholders**
 
@@ -708,10 +708,12 @@ RECIPE[3].TEMPLATE=Operation
 RECIPE[4].NAME=[PHASE] 
 RECIPE[4].CATEGORY=OSIBatch 
 RECIPE[4].TEMPLATE=Phase 
-RECIPE[4].MODULEPATH=[AREA]\[PROCESSCELL]\[UNIT]\[PHASEMODULE] 
+RECIPE[4].MODULEPATH=[AREA]\[PROCESSCELL]\[UNIT]\[PHASEMODULE]
+
 RECIPE[5].NAME=[PHASESTATE] 
 RECIPE[5].CATEGORY=OSIBatch 
 RECIPE[5].TEMPLATE=PhaseState 
+
 RECIPE[6].NAME=[PHASESTEP] 
 RECIPE[6].CATEGORY=OSIBatch 
 RECIPE[6].TEMPLATE=PhaseStep

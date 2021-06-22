@@ -50,11 +50,11 @@
   - topicUid: BIF_OperationalSettingsTab # No modifications
   - topicUid: BIF_TestConfigurationTab # No modifications
 # Command Line Parameters
-- topicUid: BIF_CommandLineParameterReference # Modify for interface
+- topicUid: BIF_CommandLineParameterReference # Customized for DeltaV
 # Initialization File
-- topicUid: BIF_InitializationFileReference # Modify for interface
+- topicUid: BIF_InitializationFileReference # Customized for DeltaV
   items: 
-  - topicUid: BIF_InitializationFileExamples # Modify for interface
+  - topicUid: BIF_InitializationFileExamples # Customized for DeltaV
 # Diagnostic Point Reference
 - topicUid: BIF_DiagnosticPointReference # No modifications required
 # Event file monitor utility
