@@ -10,7 +10,7 @@ Alarm tag templates allow you to configure the event notifications you will rece
 
 ### Index
 
-    Assigns a unique numeric identifier for the template.
+Assigns a unique numeric identifier for the template.
 
 ### Name
 
@@ -63,6 +63,7 @@ Use the drop down menu to select from the following:
 * **Custom alias name**: Provide a custom alias using one of the following format examples:
 
   * Tag(#)alias = ABC\def |test[module]
+  
   * Tag(#)alias = $\[Area] |[module] ALARM alias
 
 * **Disable alias creation**: No alias is created.
