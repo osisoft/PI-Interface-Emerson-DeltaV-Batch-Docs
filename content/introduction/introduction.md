@@ -6,7 +6,7 @@ uid: BIF_Introduction
 
 <!-- Customized for Emerson DeltaV -->
 
-PI interfaces for Batch Execution Systems (BES) and Manufacturing Execution Systems (MES) are based on a common framework. For vendor-specific information, refer to the topic titled <xref:BIF_WorkflowSupport> in this user guide.
+PI interfaces for Batch Execution Systems (BES) and Manufacturing Execution Systems (MES) are based on a common framework. For vendor-specific information, refer to the topic titled <xref:BIF_Interface> in this user guide.
 
 **Note:** If you record batch process data directly to PI tags and do not use a BES, you can generate batch data from PI tag data using the PiBaGen or PIEFGEN utilities. For details, refer to the manuals for these applications. For details, refer to the manuals for these applications.
 
