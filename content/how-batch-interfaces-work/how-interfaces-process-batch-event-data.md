@@ -10,4 +10,3 @@ The interface processes start and end events for each level. The level at which 
 
 When you configure the interface to generate event frames in PI AF, the interface creates a set of event frame templates in the target database, one template for each level in the standard S88 batch hierarchy. You can modify the templates to customize the data that is stored in the generated event frames. The interface creates equipment assets in the Module Database or PI AF (depending on where you're storing batch data) based on allocation events from the BES, and populates the attributes of those assets with relevant data.
     
-**Caution**: To ensure compatibility with RtReports, any custom Event Frame batch template used must be derived from a default Batch Interface Event Frame Template.
