@@ -1,61 +1,24 @@
 ---
-uid: BIF_Introduction
+uid: introduction
 ---
 
-# Introduction to [!include[interface](../includes/interface-name.md)]
+# Introduction to PI Interface for Emerson DeltaV Batch
 
-<!-- Customized for Emerson DeltaV -->
+Emerson DeltaV is is a plant operations digital automation system that uses batch events to manage production processes. 
 
-PI interfaces for Batch Execution Systems (BES) and Manufacturing Execution Systems (MES) are based on a common framework. For vendor-specific information, refer to the topic titled <xref:BIF_Interface> in this user guide.
+PI Interface for Emerson DeltaV Batch is a scan-based interface that collects batch processing events from the DeltaV System, collecting batch events in real-time through the DeltaV OPC Alarm & Events Server (A&E Server). The interface stores them in PI Batch Database, and collects associated batch data to PI Tags and PI Batch properties. It populates the PI Batch Database and PIModule Database. 
 
-**Note:** If you record batch process data directly to PI tags and do not use a BES, you can generate batch data from PI tag data using the PiBaGen or PIEFGEN utilities. For details, refer to the manuals for these applications. For details, refer to the manuals for these applications.
+Associated batch data, such as operator comments, report parameters, and recipe parameters, are retrieved by querying the DeltaV Batch Historian during each interface scan. If you lose the connection to the DeltaV OPC A&E Server, the interface retrieves batch data and associated batch data from the DeltaV Batch Historian during each interface scan. 
 
-PI batch interfaces are scan-based interfaces that populate either
+The interface automatically tries to re-establish the connection to the DeltaV OPC A&E Server;once the connection has been re-established, the interface returns to collecting batch data in real-time through the DeltaV OPC A&E Server.
 
-* PI AF database (with event frames and elements) or 
-* PI Batch Database and PI Module Database (with batches and modules) based on events and data read from a data source. The interfaces can be configured to create and update PI points based on the data received. The interface cannot update the batch data source.               
+This interface is primarily designed to be used for DeltaV 10.3 and later systems utilizingthe DeltaV OPC A&E Server and the DeltaV Batch Historian; however, it can run againstearlier systems utilizing different data sources.  
 
-**Note:** To use event frames, your PI batch interface must be version 3.x or higher.                   
+* For DeltaV 9.3 systems this interface can utilize the DeltaV Batch Historian or DeltaV event files as the primary data source.  
+* For DeltaV 8.4 systems this interface can only use DeltaV event files as the primary data source.
 
-Batch interfaces can read data from multiple data sources, which enables the PI server to handle scenarios in which different overlapping batch recipes can access the same unit in different stages of the production cycle. By acquiring data for the same time frame from multiple sources and collating it into a single time-ordered sequence, a single interface instance can capture the complete history of the batch process.
+**NOTE:**  The use of DeltaV event files as a public interface for the DeltaV System is not recommended by Emerson. 
 
-Unlike other OSIsoft interfaces, batch-related interfaces do not use PI buffering. Batch data is persistent in the data source and not in danger of being lost. If connection to the PI server is lost, the interface continues to collect data from the data source, transmitting it to the PI server when the connection is reestablished. If for any reason the interface is unable to collect data, the data remains available in the database or event files and you can use recovery mode to fill in any data that was missed during the time the interface was down.
+The flow of data in the interface is unidirectional. Data can only be read from the specified data source and written to the PI Server. This interface can read data from multiple batch data sources simultaneously. By design, the interface does not edit or delete source data. 
 
-**Note:**  These interfaces are designed for recipes that constrain a unit to run only one unit procedure at a time.
-
-<!-- end comment-->
-
-<!-- Content below applies to all interfaces. -->
-
-Two different models are used to describe batch processes: 
-
-1. The **equipment model** describes the physical equipment necessary to create a batch. 
-
-2. The **recipe model** describes the procedures that are performed during the execution of a recipe. 
-
-There is no intrinsic or direct relationship between the models. With the exception of arbitration events, journal files contain only recipe model event information. 
-
-The S88 process model is composed of the following hierarchy:
-
-* Procedure (recipe) 
-* Unit procedures 
-* Operations 
-* Phases 
-* Phase steps 
-* Phase states 
-
-**Note:** According to the ISA S88.01 standard, procedures and unit procedures are optional. A recipe can be composed solely of operations and phases. The PI Batch Database does not use a strict S88 approach to describe or record batch data.
-
-The physical model is composed of the following equipment-oriented hierarchy:
-
-* Enterprise 
-* Site 
-* Area 
-* Process cell 
-* Unit 
-* Equipment module 
-* Control module 
-
-Unit procedures from the data source are mapped to PIUnitBatches. Only a single unit procedure can be active in a unit at any given time, which restricts the configuration of recipes that can be run by the batch execution system if batch data is to be captured by the interface in a reliable and meaningful way. By contrast, event frames support parallel unit procedures natively. 
-
-You can configure the interface to create PI points and properties by defining templates, which specify the events that trigger creation, configure how the property or tag is named, and define the data to be stored. 
+In addition to batch data, the interface can populate the PI Point Database. PI Point creation, commonly known as tag creation and event population, is controlled by using tag templates. All modules, tags, tag aliases, and health tags are automatically created on the PI server. The Interface does not use the PI API Buffering Service because batch and tag data is already buffered by the source historian databases. To maximize performance, the interface writes events to PI tags in bulk—that is, it writesall events per interface scan.
