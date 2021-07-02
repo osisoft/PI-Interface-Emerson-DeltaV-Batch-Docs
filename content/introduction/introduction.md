@@ -2,7 +2,7 @@
 uid: BIF_Introduction
 ---
 
-# Introduction to [!include[interface](../includes/interface-name.md)]
+# Introduction
 
 <!-- Customized for Emerson DeltaV -->
 
