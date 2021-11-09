@@ -1,1 +1,1 @@
-<PRODUCT_SHORT>
+PI Interface for Emerson DeltaV Batch
