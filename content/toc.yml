@@ -48,7 +48,7 @@
   - topicUid: BIF_TimeSettingsTab # No modification
   - topicUid: BIF_BatchSetupTab # Customized for DeltaV
   - topicUid: BIF_OperationalSettingsTab # No modifications
-  - topicUid: BIF_MonitorTagSetupTab # No modifications required
+# - topicUid: BIF_MonitorTagSetupTab # No modifications required
   - topicUid: BIF_TestConfigurationTab # No modifications
 # Command Line Parameters
 - topicUid: BIF_CommandLineParameterReference # Customized for DeltaV
