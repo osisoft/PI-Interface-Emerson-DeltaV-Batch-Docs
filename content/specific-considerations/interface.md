@@ -2,7 +2,7 @@
 uid: BIF_Interface
 ---
 
-# [!include[interface](../includes/interface-name.md)]
+# [!include[interface](../includes/product-long.md)]
 
 <!-- Customized for DeltaV -->
 

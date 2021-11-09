@@ -2,7 +2,11 @@
 uid: introduction
 ---
 
+<<<<<<< HEAD
 # Introduction to PI Interface for Emerson DeltaV Batch
+=======
+# Introduction to [!include[interface](../includes/product-long.md)] [!include[interface](../includes/product-version.md)]
+>>>>>>> 8e2a7c5c24ad8b8033a2f94be546d353ba252ecc
 
 Emerson DeltaV is is a plant operations digital automation system that uses batch events to manage production processes. 
 
