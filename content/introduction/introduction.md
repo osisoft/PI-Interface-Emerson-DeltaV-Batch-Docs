@@ -2,11 +2,7 @@
 uid: introduction
 ---
 
-<<<<<<< HEAD
-# Introduction to PI Interface for Emerson DeltaV Batch
-=======
 # Introduction to [!include[interface](../includes/product-long.md)] [!include[interface](../includes/product-version.md)]
->>>>>>> 8e2a7c5c24ad8b8033a2f94be546d353ba252ecc
 
 Emerson DeltaV is is a plant operations digital automation system that uses batch events to manage production processes. 
 
@@ -25,4 +21,4 @@ This interface is primarily designed to be used for DeltaV 10.3 and later system
 
 The flow of data in the interface is unidirectional. Data can only be read from the specified data source and written to the PI Server. This interface can read data from multiple batch data sources simultaneously. By design, the interface does not edit or delete source data. 
 
-In addition to batch data, the interface can populate the PI Point Database. PI Point creation, commonly known as tag creation and event population, is controlled by using tag templates. All modules, tags, tag aliases, and health tags are automatically created on the PI server. The Interface does not use the PI API Buffering Service because batch and tag data is already buffered by the source historian databases. To maximize performance, the interface writes events to PI tags in bulk—that is, it writesall events per interface scan.
+In addition to batch data, the interface can populate the PI Point Database. PI Point creation, commonly known as tag creation and event population, is controlled by using tag templates. All modules, tags, tag aliases, and health tags are automatically created on the PI server. The Interface does not use the PI API Buffering Service because batch and tag data is already buffered by the source historian databases. To maximize performance, the interface writes events to PI tags in bulk—that is, it writes all events per interface scan.

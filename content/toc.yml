@@ -1,5 +1,5 @@
 # Introduction
-- topicUid: BIF_Introduction # Customized for DeltaV
+- topicUid: introduction # Customized for DeltaV
   items:
   - topicUid: BIF_InterfaceModes # No modifications
   - topicUid: BIF_SupportedFeatures # Customized for DeltaV
