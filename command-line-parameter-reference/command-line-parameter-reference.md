@@ -30,7 +30,7 @@ The following headings describe each command line parameter available.
 
 ### `/bidm =<list>` 
 
-(Optional) Override the incoming batch ID by selecting a substring. Specify one or more masks composed of text and wildcards, to be used to compose the desired batch ID from the contents of the source BatchID field. The resulting batch ID is used for the Batch ID field of the top-level procedure and for the [BATCHID] placeholder. By default, the batch ID field in unit procedures contain the full batch ID from the data source. To use the truncated batch ID instead, configure the TBID setting. 
+(Optional) Override the incoming batch ID by selecting a substring. Specify one or more masks composed of text and wildcards, to be used to compose the desired batch ID from the contents of the source BatchID field. The resulting batch ID is used for the Batch ID field of the top-level procedure and for the [BATCHID] placeholder. By default, the batch ID field in unit procedures contains the full batch ID from the data source. To use the truncated batch ID instead, configure the TBID setting. 
 
 Valid wildcards are as follows:
 
@@ -42,7 +42,9 @@ Valid wildcards are as follows:
 | ! | Repeat the previous mask symbol |
 | * | Any set of symbols |
 
-For example, if the incoming Batch ID is: `lot30112 / 90dev123 / 12345stp / ld567`
+#### Wildcard use example
+
+If the incoming Batch ID is: `lot30112 / 90dev123 / 12345stp / ld567`
 
 The following list shows example masks and resulting data.
 
@@ -89,6 +91,23 @@ Example:
 
 (Optional – event frames only) Disable propagation of referenced elements to children. By default, the interface propagates each event frame element reference to its children event frames.
 
+### `/enabledmonitortags =<TAG>]`
+
+Indicates which [monitor tags](xref:BIF_MonitorTagSetupTab) are enabled. Each enabled tag consumes a license, but disabled tags do not. You can enable multiple monitor tags by separating each one with a comma-separated list. For example:
+
+```text
+/enabledmonitortags=BATCHSTATUS,BATCHPROCESSORSTATUS,BATCHLISTCOUNT,EQUIPMENTCOUNT,TAGLISTCOUNT,TAGAELISTCOUNT,EVENTREADCOUNT,ERRORCOUNT,SOURCEUNITCOUNT,PIUNITCOUNT,SOURCEPHASEMODCOUNT,PIPHASEMODCOUNT,SOURCEBATCHCOUNT,PIBATCHCOUNT,SOURCEUNITBATCHCOUNT,PIUNITBATCHCOUNT,SOURCESUBBATCHCOUNT,PISUBBATCHCOUNT,SOURCEPROPERTYNODECOUNT,PIPROPERTYNODECOUNT,SOURCEPROPERTYEVENTCOUNT,PIPROPERTYEVENTCOUNT,SOURCETAGCOUNT,PITAGCOUNT,SOURCETAGEVENTCOUNT,PITAGEVENTCOUNT,SOURCETAGALIASCOUNT,PITAGALIASCOUNT,CACHEDBATCHCOUNT,OPENBATCHCOUNT,SOURCEREADTIME,TAGCACHETIME,BATCHCACHETIME,EQUIPMENTCACHETIME,BATCHSYNCTIME,TAGSYNCTIME,EQUIPMENTSYNCTIME,TOTALTIME,WAITINGFOREQUIPMENTUB,NUMBEROFWORKORDERS,NUMBEROFOPENWORKORDERS,WORKORDERQUERYTIMEAVG
+```
+
+For more information about each tag available, see [Monitor tag reference](xref:BIF_MonitorTagSetupTab#monitor-tag-reference).
+
+Additionally, you can enable or disable all tags using the `ALL` or `NONE` options:
+
+```text
+/enabledmonitortags=ALL
+/enabledmonitortags=NONE
+```
+
 ### `/equipmentXML =<filepath>` 
 
 (Optional) Specifies the location of the DeltaV-generated equipment hierarchy XML file. The EMDVB interface uses this reference data to locate missing ProcessCell field by searching based on the combination of Area and Unit fields. Valid only when a DeltaV AE SQL datasource is defined. 
@@ -101,15 +120,15 @@ Example:
 
 ### `/failoverID =<string>`
 
-(Optional) Configure a unique failover ID for the interface instance. Must be used with the /FailOverTag parameter.
+(Optional) Configure a unique failover ID for the interface instance. Must be used with the `/failover` parameter.
 
 Example: `/FailOverID="intf1"`
 
 ### `/failovertag =<tag name>`
 
-(Optional) Specifies the PI tag to be used to track the primary interface instance. Must be used with the /FailOverID parameter.
+(Optional) Specifies the PI tag to be used to track the primary interface instance. Must be used with the `/failoverID` parameter.
 
-Example: `/FailOverTag="Batch_FailoverTag"`
+Example: `/failovertag="Batch_FailoverTag"`
 
 ### `/host =host:port`
 
@@ -124,7 +143,7 @@ Examples:
 
 ### `/id =<identifier>`
 
-(Required) Specify a one- to nine-number identifier for the interface instance. Assigned to the Location1 attribute of tags that are updated by the interface instance.
+(Required) Specify a one- to nine-number identifier for the interface instance. Assigned to the Location1 attribute of tags that the interface instance updates.
 
 ### `/includeincompletedata`
 
@@ -136,7 +155,7 @@ Examples:
 
 ### `/link =<AF element path>`
 
-(Deprecated, see /readlink and /writelink.) Combine event frames from different interface instances. Useful when you have an MES controlling multiple BESs. Configure an interface instance for each BES, specifying the same linkage element. The BES interface instances create event frame references under the MES event frames that refer to the BES interface instances. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
+(Deprecated, see `/readlink` and `/writelink`.) Combine event frames from different interface instances. Useful when you have an MES controlling multiple BESs. Configure an interface instance for each BES, specifying the same linkage element. The BES interface instances create event frame references under the MES event frames that refer to the BES interface instances. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
 
 ### `/maxqtf =<days>`
 
@@ -152,9 +171,9 @@ Examples:
 
 ### `/merge`
 
-(Optional) Enable merging of multiple source batches with same ID. The original data for each batch merged is stored in PI properties under a node named using the ID of the original batch. The data includes the original batch ID, start time (UTC), end time (UTC), product and formula name. The interface merges only batches that are cached in local memory. The time frame for merging is configured using the /cachetime switch.
+(Optional) Enable merging of multiple source batches with same ID. The original data for each batch merged is stored in PI properties under a node named using the ID of the original batch. The data includes the original batch ID, start time (UTC), end time (UTC), product and formula name. The interface merges only batches that are cached in local memory. The time frame for merging is configured using the `/cachetime` switch.
 
-If the IDs of the batches you want to merge are different, use the /bidm flag to override incoming IDs.
+If the IDs of the batches you want to merge are different, use the `/bidm` flag to override incoming IDs.
 
 Example: Given the following five batches running within the cache time frame.
 
@@ -164,27 +183,31 @@ Example: Given the following five batches running within the cache time frame.
 * USPO12345_test
 * CleaningTest
 
-With merging enabled, only the CleaningTest batches are merged. To merge the other three batches, which have IDs containing the string "12345", specify /bidm=######.
+With merging enabled, only the CleaningTest batches are merged. To merge the other three batches, which have IDs containing the string "12345", specify `/bidm=######`.
 
 ### `/mode =<mode>` 
 
 (Optional) Valid modes are as follows:
 
-* **Realtime:** (Default) Real-time data collection. If a recovery start time is specified (/rst), the interface recovers data before starting realtime collection.
+* **Realtime:** (Default) Real-time data collection. If a recovery start time is specified (`/rst`), the interface recovers data before starting real-time collection.
 
 * **Stat:** Statistics mode. Compare source data with the corresponding PI System batch data. The interface does not write to or modify any data PI batch data. On completion, the interface reports results and stops.
 
-* **Delete:** Delete batch data from PI archives for specified period, leaving data from all other sources intact. Use only if the interface is unable to synchronize source batch data with the PI System. Must be used in conjunction with the recovery mode switches (/rst and /ret).
+* **Delete:** Delete batch data from PI archives for specified period, leaving data from all other sources intact. Use only if the interface is unable to synchronize source batch data with the PI System. Must be used in conjunction with the recovery mode switches (`/rst` and `/ret`).
 
 * **NoData:** Newly-added tags, units and modules are indexed (referenced) in the primary PI archive, but older archives do not have entries for these modules, units and tags. In NoData mode, the interface creates modules, units, tags and tag aliases without processing batch data and writing events to the tags. To recover batch data for a period prior to the one in the primary archive, you must reprocess older archives with the offline archive utility. Manual archive reprocessing creates indexes for newly-added units, modules, tags. Always run the interface in this mode before writing new batch data to older PI archives (that is, archives other than the primary archive).
-  
+
+### `/monitortagwindow =<days>`
+
+(Optional) Monitor tag time window in days. Most [monitor tags](xref:BIF_MonitorTagSetupTab) show a sum of events over a number of days. This setting allows the size of the window to be adjusted. The default value is one day.
+
 ### `/mop`
 
-(Optional) Merge identically-named operations under the same parent unit procedure. The start time of the combined operation is the start of the earliest operation and the end time is the end time of the latest or longest operation that was merged.
+(Optional) Merge identically named operations under the same parent unit procedure. The start time of the combined operation is the start of the earliest operation and the end time is the end time of the latest or longest operation that was merged.
 
 ### `/mup`
 
-(Optional) Merge identically-named sequential unit procedures running on the same unit into a single unit procedure. Unit procedures are not merged if the unit was used by another recipe between candidates for merging. The start time of the resulting merged unit procedure is the start of the earliest unit procedure, and the end time is the end time of the latest or longest unit procedure that was merged.
+(Optional) Merge identically named sequential unit procedures running on the same unit into a single unit procedure. Unit procedures are not merged if the unit was used by another recipe between candidates for merging. The start time of the resulting merged unit procedure is the start of the earliest unit procedure, and the end time is the end time of the latest or longest unit procedure that was merged.
 
 ### `/noarbitration`
 
@@ -285,9 +308,9 @@ If the Descript Column contains TEST123-STRT-B, the interface generates a phase 
 
 ### `/readlink= <AFelementpath>`
 
-Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
+Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure `/readlink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/writelink` setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
 
-For a BES interface controlling one or more MES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link.
+For a BES interface controlling one or more MES systems, configure `/readlink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/writelink` setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link.
 
 ### `/restore` 
 
@@ -314,13 +337,15 @@ Specifies how long the interface retries a failed attempt to write data before t
 
 ### `/rti`
 
-Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedure and Operation Recipe fields. Emerson EVT data source only.
+Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedure, and Operation Recipe fields. Emerson EVT data source only.
 
 ### `/scan =<seconds>`
 
 (Optional) Specifies, in seconds, how often to scan the data source for new data. The default is 60 seconds. A scan that returns a large amount of data can cause the interface to skip the subsequent scan.
 
-### `/singlerun` | (Optional) Perform one scan and stop.
+### `/singlerun` 
+
+(Optional) Perform one scan and stop.
 
 ### `/smp ="equipment path"`
 
@@ -342,7 +367,7 @@ Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedur
 
 ### `/tbid`
 
-(Optional) Use the truncated batch ID in the batch ID field of unit procedures. Incoming batch IDs are reformatted using the mask defined in the /bidm parameter.
+(Optional) Use the truncated batch ID in the batch ID field of unit procedures. Incoming batch IDs are reformatted using the mask defined in the `/bidm` parameter.
 
 ### `/tbse`
 
@@ -360,13 +385,13 @@ Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedur
 
 Default settings for batch interfaces:
 
-Emerson batch interfaces /UBR = false
+Emerson batch interfaces `/UBR = false`
 
-/UBR C can be set in the INI file, on the command line or by using the PI Event Frames Interface Manager / batch Setup tab.
+`/UBR` can be set in the .ini file, on the command line, or by using the PI Event Frames Interface Manager / batch Setup tab.
 
-If /UBR = true the interface will use SYSTEM MESSAGE to control the start and end of event frames. Example System Messages are BEGIN OF BATCH, END OF BATCH, UNIT PROCEDURE STARTED, and UNIT PROCEDURE ENDED.
+If `/UBR = true` the interface will use SYSTEM MESSAGE to control the start and end of event frames. Example System Messages are BEGIN OF BATCH, END OF BATCH, UNIT PROCEDURE STARTED, and UNIT PROCEDURE ENDED.
 
-If /UBR = false the interface will use STATE CHANGE to control the start and end of event frames. Example State Change messages are RUNNING, REMOVED, ABORTED, COMPLETE, STOPPED, and ABANDON. The interface will combine the state change with the recipe ( Batch, UnitProcedure, Operation, Phase ) to determine which recipe step has changed state.
+If `/UBR = false` the interface will use STATE CHANGE to control the start and end of event frames. Example State Change messages are RUNNING, REMOVED, ABORTED, COMPLETE, STOPPED, and ABANDON. The interface will combine the state change with the recipe ( Batch, UnitProcedure, Operation, Phase ) to determine which recipe step has changed state.
 
 Provided for backward compatibility with version 1.0.0.0 of the interface. |
 
@@ -380,6 +405,6 @@ Added in version 4.0.30.
 
 ### `/writelink= <AFelementpath>` 
 
-Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure /writelink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /readlink setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
+Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure `/writelink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/readlink` setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.
 
-For a BES interface controlling one or more MES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link.
+For a BES interface controlling one or more MES systems, configure `/readlink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/writelink` setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. You must configure Link templates to define which events specify a link.
