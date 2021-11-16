@@ -4,7 +4,7 @@ User documentation for PI Interface for Emerson DeltaV Batch.
 
 This repository consumes another repo as a subtree within the /content directory: https://github.com/osisoft/PI-Batch-Interface-Doc-Framework. To update the subtree, enter the following command:
 
-git subtree pull --prefix content https://github.com/osisoft/PI-Batch-Interface-Doc-Framework main --squash
+`git subtree pull --prefix content https://github.com/osisoft/PI-Batch-Interface-Doc-Framework main --squash`
 
 License © 2019 - 2021 OSIsoft, LLC. All rights reserved.
 
