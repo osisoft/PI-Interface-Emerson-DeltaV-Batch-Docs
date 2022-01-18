@@ -28,7 +28,7 @@ Select **Create event frames in PI Asset Framework** to create event frames in P
 
 The PI Asset server and PI Asset Framework database are displayed in the **Host and Database** (/AFHOST and /AFDATABASE) field. Click **Select Asset server** to open the Select Database window to choose an alternative server. 
 
-To create a new element in Assest Framework with PI point references as attributes, select **Enable Batch Interface Element** and click **Select Parent Element** to choose a location for the element. If the element already exists in the parent, the new element will not be created. 
+To create a new element in Asset Framework with PI point references as attributes, select **Enable Batch Interface Element** and click **Select Parent Element** to choose a location for the element. If the element already exists in the parent, the new element will not be created. 
 
 Under **Enable Auto Check In**, select from the following options:
 
