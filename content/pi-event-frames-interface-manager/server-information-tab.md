@@ -28,7 +28,11 @@ Select **Create event frames in PI Asset Framework** to create event frames in P
 
 The PI Asset server and PI Asset Framework database are displayed in the **Host and Database** (/AFHOST and /AFDATABASE) field. Click **Select Asset server** to open the Select Database window to choose an alternative server. 
 
-To create a new element in Asset Framework with PI point references as attributes, select **Enable Batch Interface Element** and click **Select Parent Element** to choose a location for the element. If the element already exists in the parent, the new element will not be created. 
+Select the **Enable Batch Interface Element** check box to create a new element that contains the Interface Health Tag information.
+
+Interface Health Tags collect batch statistics for the interface, such items as process time for unirecords or the number of unirecords in a batch. Elements are created with the following naming convention: *(InterfaceInstanceName)_(InterfaceID)*_BatchStatistics.
+        
+Click **Select Parent Element** to open a dialog box to search for a parent to host the new element. After locating the parent, select OK to return to the Server Information tab.
 
 Under **Enable Auto Check In**, select from the following options:
 
