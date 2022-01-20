@@ -35,7 +35,9 @@
 - topicUid: BIF_PIEventFramesInterfaceManager # No modifications
   items:
   - topicUid: BIF_ServerInformationTab # No modifications
-  - topicUid: BIF_SourceTab # Customized for DeltaV
+    items:
+    - topicUid: BIF_WindowsCredentialManagerAuthentication # Unmodified
+  - topicUid: BIF_SourceTab # Customized for DeltaV 
   - topicUid: BIF_TemplatesTab # Customized for DeltaV
     items:
     - topicUid: BIF_AlarmTagTemplates # No modifications
