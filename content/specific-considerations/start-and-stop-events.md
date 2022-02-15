@@ -119,13 +119,74 @@ The DeltaV BES stores its batch execution history using Microsoft SQL Server. Th
 
 To detect start and end events, the interface queries the following views by default:
 
-• brecipestatechangeview
-
-• batcheventview
-
-• batchequipmentview
+* brecipestatechangeview
+* batcheventview
+* batchequipmentview
 
 By default, batch event start and end times are read from batcheventview. For recipes above phase-level recipes, unit batches require equipment acquisition and release events (unless equipment arbitration events are unavailable). For equipment arbitration events, the interface reads the [AcquireTime] and [ReleaseTime] values from batchequipmentview. For phase states, the start of a state ends any preceding state (in other words, there are no explicit end events for phase states.)
 
+### SQL UBR Start and Stop Events
 
+|Recipe Level      |Database View       |Start time column  |End time column  |Remarks                                  |
+|------------------|--------------------|-------------------|-----------------|-----------------------------------------|
+|Batch             |batchrecipeview     |[ActivateTime]     |[DeactivateTime] |For "procedure" events                   |
+|Unit batch        |batchrecipeview     |[StartTime]        |[EndTime]        |Plus [AcquireTime] and [ReleaseTime] from batchequipmentview|
+|Operation         |batchrecipeview     |[StartTime]        |[EndTime]        |                                         |
+|Phase             |batchrecipeview     |[StartTime]        |[EndTime]        |                                         |
+|Phase state       |brecipestatechangeview or batcheventview|[StartTime]      |[EndTime]|[EventType] field = "State Change" and [EventDescr] field containing the substring <state name>       |
+
+To detect the start and end of levels when the UBR option is enabled, the interface queries the following views:
  
+* batchrecipeview
+* batchequipmentview
+* brecipestatechangeview
+* batcheventview
+
+For operation- and phase-level recipes, the interface creates the parent levels (unit batch and batch).
+
+## SQL Query Details
+The interface retrieves history from the DVHisDB database, primarily using a query that returns the union of the following tables:
+ 
+* bactivestepchangeevent
+* bmaterialchargerequestevent
+* bmaterialchargeevent
+* bpausestatusevent
+* bequipmentselectionevent
+* bphaselinkpermissiveevent
+* brecipemodechangeevent
+* brecipemodecommandevent
+* brecipestatechangeevent
+* brecipestatecommandevent
+* brecipevaluechangeevent
+* brecipevaluerequestevent
+* breportevent
+* btextmessageevent
+* bphasebatchrequestevent
+* brecipecomment
+* unhandledbatchmsg
+
+In addition, the interface retrieves batch-related data from the following views:
+
+|View or Table      |Contents Queried For                                         |
+|-------------------|-------------------------------------------------------------|
+|batchview          |uniqueid, batchid, start time, end time, product, uniqueid and archived flag with new archived database name for all batches.|
+|brecipestatechangeview | State change events, which are used by default to detect start and end of recipe levels. |
+|batchrecipeview | Recipe data, equipment linkage, start and end time for each object.|
+|batchequipmentview | Equipment arbitration events.|
+|batcheventview | Batch-associated data. Queried only if **Use original batch event view** (UOBEV) option is enabled. The [DESCRIPT] column is parsed for [PVAL] and [EU].|
+|localevars | Used to convert local start and end times with DST offsets to GMT time and then to UTC seconds.|
+ 
+To detect start and end events, the interface queries the following views by default:
+ 
+* brecipestatechangeview
+* batcheventview
+* batchequipmentview
+
+Batch event start and end times are read from batcheventview. For recipes above phase-level recipes, unit batches require equipment acquisition and release events (unless equipment arbitration events are unavailable). For equipment arbitration events, the interface reads the [AcquireTime] and [ReleaseTime] values from batchequipmentview. For phase states, the start of a state ends any preceding state (in other words, there are no explicit end events for phase states.)
+
+To detect the start and end of levels when the UBR option is enabled, the interface queries the following views:
+ 
+* batchrecipeview
+* batchequipmentview
+* brecipestatechangeview
+* batcheventview
