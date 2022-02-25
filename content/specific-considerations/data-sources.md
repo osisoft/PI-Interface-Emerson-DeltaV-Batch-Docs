@@ -4,20 +4,60 @@ uid: BIF_DataSources
 
 # Data sources
 
-<!-- Customized for DeltaV -->
+<!-- Karl Nyce 02/14/22: Customized for DeltaV -->
 
-Emerson **Syncade** batch interface collects data historically from **Syncade** web services and real-time data from the Microsoft Message Queue (MSMQ).
+PI Interface for Emerson DeltaV interface can collect data from the following types of data sources:
 
-To configure the interface to collect historical data from a **Syncade** web service, specify the hostname of the **Syncade** web service host on the **Source** tab of the PI Event Frame Interface Configuration Manager as a URL. For example:
+- DeltaV Batch Historian (SQL Server)
+- Event journal files (EVT files)
+- DeltaV Alarms and Events server (alarms and events data only, not batch events)
+- OPC Alarms and Events servers (real-time batch data only, not alarms and events)
 
-`https://My**Syncade**Host.int:8081/emrWF/WebService/OrdersInterface.asmx`
-    
-**Note:** You only need to specify the complete URL.
+A single interface instance can collect data from multiple data sources if the data sources are all the same type.
 
-To configure the interface to collect real-time data from the Microsoft Message Queue, ensure that the **Syncade** system is configured to write data to a message queue on the interface machine and, on the Source tab of the PI Event Frame Interface Configuration Manager, select that message queue.
+For DeltaV 9.3 systems, this interface can use the DeltaV Batch Historian or DeltaV event files as the primary data source. For DeltaV 8.4 systems, this interface can only use DeltaV event files as the primary data source. 
 
-![web service source](../images/web-service-source.png)
+**Note:** The use of DeltaV event files as a public interface for the DeltaV System is not recommended by Emerson.
 
-```text
-SOURCE[1].msmqpath=localhost\private$\QueueForOSIjshearouse Source[1].websrvpath=https://localhost:8081/emrWF/WebService/OrdersInterface.asmx
-```
+The interface can read data from batches that have been archived in DeltaV, only if it runs under an account that has read access to the DeltaV archive databases.
+
+To generate equipment assets in PI that correspond to the equipment in a DeltaV Alarms and Events server, export the EquiHeir.xml from DeltaV and copy it to a location that the interface can access. On the **Source** page of the PI Event Frame Interface Manager, configure the location of the file in the DeltaV equipment hierarchy file field.
+
+**Note:** For details about migrating from the Batch Event File Interface to the Emerson DeltaV batch interface, refer to the OSIsoft Knowledge Base article, [Migration from Batch Event File (EVT) Interface to Batch Interface Framework, DeltaV Batch Interface, or RtReports](https://customers.osisoft.com/s/knowledgearticle?knowledgeArticleUrl=KB00430).
+
+## DeltaV Batch Historian (SQL Server)
+The default name of the database where the DeltaV Batch Historian records events is **DVHisDB**. For details about the views from which the interface reads the start and end events for the batch, refer to [Start and stop events](start-and-stop-events.md).
+
+To communicate with SQL Server, the interface requires the Microsoft ADO driver for Microsoft SQL to be installed on the interface node. The driver is part of SQL Native client package and can be downloaded from the MSDN web site.
+
+## Event Journals
+Event journals are text files in which the BES logs batch events. For the Emerson DeltaV systems, the interface expects each line in the event journal to be composed of the following tab-delimited fields, in the order specified:
+
+![Event Journals](../images/event-journals.png)
+
+**Note:** In event journals, the product ID information is stored in the [PVALUE] field, in the row that contains the **Product Code** description. Typically, this is a recipe header event. If the BES indicates the product ID using a value other than Product Code, you must translate the value to Product Code to ensure that the interface detects it. To configure the translation using PI Event Frame Interface Manager, check the Translation field on the template’s Configuration tab and specify the source and target string on the Translations dialog.
+
+## Emerson DeltaV Alarms & Events
+The interface can be configured to read alarms and events data (not batch data, however) from an Emerson DeltaV Event Chronicle data source (version 10.3 or higher). 
+
+To read from an Emerson DeltaV Event Chronicle data source, you must install the Microsoft SQL Native Client on the interface node. Delta V Event Chronicle stores its data using Microsoft SQL Server. The default alarms and events database server is named "DELTAV_CHRONICLE" and the default
+database is named "EJournal". The interface reads events from the Journal table.
+
+To configure an alarms and events data source using PI Event Frames Interface Manager, perform the following steps:
+
+1. On the **Data Source** tab, right-click the **Sources** node and choose **Add SQL Source**. The Configuration page is displayed.
+2. Check **Use Alarm and Events Historian**.
+3. To specify mappings that ensure that process cell data is recorded correctly (DeltaV does not emit process cell information), click **Area to Process Cell...** or **Unit to Process Cell...** and specify the process cell to be recorded with its events.
+4. To configure the interface to use the equipment hierarchy XML file that is generated by DeltaV, specify the path to the XML file in the **DeltaV equipment hierarchy** field.
+
+## OPC Alarms and Events
+The OPC Alarms and Events (OPCAE) server provides real-time batch data (not alarms and events data) to the batch interface. The interface's recovery feature cannot be used to recover data. When collecting data from an OPCAE server, the batch interface collects only start and end times and equipment allocation data. 
+
+To configure an OPCAE server as a data source, click the **DeltaV OPCAE disclosure** and specify the host node and server name. When you configure an OPCAE server, the DeltaV Batch Historian serves as a backup source and the source for additional batch-associated events.
+
+The interface creates a batch when it identifies the recipe type of the batch, which normally occurs when the recipe is loaded and started. The interface starts a batch when it reads the BATCH-EVENT event with its event attribute [6] = "REMOVED". The recipe structure is read from the events that trigger the start and end of levels, such as Procedure Started/Finished, UnitProcedure Started/Finished, etc. 
+
+For all levels below batch, the interface checks event attribute [6] for the value "State Change" and parses event attribute [8] to determine whether the event was a start or end event and to determine which level of the batch hierarchy is affected, as shown in the following table:
+
+![OPC Alarms and Events](../images/alarms-events.png)
+
