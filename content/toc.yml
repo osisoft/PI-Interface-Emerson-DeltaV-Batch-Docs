@@ -60,8 +60,6 @@
   - topicUid: BIF_InitializationFileExamples # Customized for DeltaV
 # Diagnostic Point Reference
 - topicUid: BIF_DiagnosticPointReference # No modifications
-# Event file monitor utility
-- topicUid: BIF_EventFileMonitorUtility # No modifications
 # Glossary
 - topicUid: BIF_Glossary
 # Technical Support and Feedback
