@@ -79,10 +79,6 @@ Override the incoming batch ID.
     
 Use the truncated batch ID in the batch ID field of unit procedures.
 
-### Batch ID attribute ( / DCSBATCHIDATTRIBUTE )
-    
-Specifies the Syncade attribute that contains the batch ID used to link to BES event frames. The default value is AutomationBatchID.
-
 ### Link to child eventframes( /WRITELINK )
     
 Combine event frames from different interface instances. For an MES controlling one or more BES systems, configure Link to child event frames on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES Link from parent event frames setting. The BES interface instances will then create event frame references under the MES event frames that refer to the BES event frames. For Emerson Syncade systems, the AutomationBatchID field must match the batchID of the batch created by the BES.

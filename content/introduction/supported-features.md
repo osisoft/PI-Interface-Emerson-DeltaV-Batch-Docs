@@ -6,15 +6,18 @@ uid: BIF_SupportedFeatures
 
 <!-- Customized for DeltaV -->
 
-Platforms: (32-bit or 64-bit in emulation mode)
+Platforms: 64-bit
 
-* Windows 2008 and Windows 2008 R2
-* Windows 7
-* Windows 8
-* Windows Server 2012
+* Windows 8.1
 * Windows 10
+* Windows 11
+* Windows Server 2012
+* Windows Server 2012 R2 SP1
+* Windows Server 2016
+* Windows Server 2019
+* Windows Server 2022
 
-No native 64-bit builds of the interfaces are available. 
+This interface is exclusively built in 64-bit.  
 
 <!-- Content below applies to all batch interfaces -->
 

@@ -316,10 +316,6 @@ Combine event frames from different interface instances. For an MES controlling 
 
 For a BES interface controlling one or more MES systems, configure `/readlink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/writelink` setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link.
 
-### `/restore` 
-
-For the ABB 800xA interface, enable recovery of batches from restored archives in all configured ABB 800xA data sources.
-
 ### `/restef`
 
 (Optional) Enables an event frame with references to inherit security settings from its primary reference element.
