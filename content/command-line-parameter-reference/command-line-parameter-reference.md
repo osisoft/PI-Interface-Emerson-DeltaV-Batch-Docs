@@ -371,7 +371,15 @@ Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedur
 
 ### `/tbse`
 
-(Optional) Directs the interface to use top level recipe start/end events for creating batch objects. By default, the interface uses batch load/unload events. Intended for batches with S88 recipe types: Procedure, Unit Procedure, Operation, and Phase.
+(Optional) True Batch Start End (`/TBSE`) is a mechanism used to determine when the PI Batch initially started. `/TBSE` is also referred to as the recipe-based start/end or the true start and end time and is set to FALSE by default. This tool is helpful if you have reporting software, such as rtreports, and require a precise start time in your reports. It is intended for batches with S88 recipe types: Procedure, Unit Procedure, Operation, and Phase.
+
+When `/TBSE = true` in the .ini configuration file, the interface uses top level recipe start/end events for creating batch objects. When processing a batch, you begin first with a batch event and followed by a procedure event. The interface uses the start time of the initial batch event prior to the procedure start event to indicate the start of the batch. 
+
+When a batch event ends, usually through a BATCH STOP event, the PROCEDURE COMPLETE State Change event timestamp lists the specific end time.
+
+**Note:** We do not recommend configuring both the `/TBSE` and the Use Batch Recipe (`/UBR`) command line parameters to TRUE at the same time. These parameters are independent from one another and are best utilized when run in separate configurations.
+
+If both `/TBSE` and `/UBR` are set to TRUE, it is likely that `/TBSE` will overwrite the start and end times of the batch.
 
 ### `/ts=GMT | LCL` 
 
@@ -383,7 +391,24 @@ Remove trailing index from Recipe fields. Applicable to Procedure, Unit Procedur
 
 ### `/ubr`
 
-Default settings for batch interfaces:
+Use Batch Recipe (`/UBR`) is a mechanism that allows the interface to enable or disable the use of the batch recipe view to generate PI Batch database objects. This is the batch processing logic.
+
+You can configure `/UBR` in the .ini configuration file, on the command line, or on the Batch Setup tab in the PI Event Frames Interface Manager. By default, `/UBR` is set to false in the Emerson batch interfaces. 
+
+When `/UBR = false`, the interface uses STATE CHANGE logic to control the start and end of event frames. Example State Change messages are RUNNING, REMOVED, ABORTED, COMPLETE, STOPPED and ABANDON. The interface combines the state change with the recipe (Batch, UnitProcedure, Operation, or Phase) to determine which recipe step has changed state. 
+
+When `/UBR = true`, the interface uses the Batch Recipe logic as opposed to the STATE CHANGE logic. The interface uses SYSTEM MESSAGE to control the start and end of event frames. Example system messages are BEGIN OF BATCH, END OF BATCH, UNIT PROCEDURE STARTED, and UNIT PROCEDURE ENDED.
+
+Additionally, there is a special SQL query you can use to handle daylight savings time across various time zones. The start time for the queried batch events is the ACTIVATETIME instead of the STARTTIME. The end time for the batch events the DEACTIVATETIME instead of ENDTIME. 
+
+**Note:** We do not recommend configuring both the UBR and the True Batch Start End (TBSE) command line parameters to TRUE at the same time. These parameters are independent from one another and are best utilized when run in separate configurations.
+
+If both `/TBSE` and `/UBR` are set to TRUE, it is likely that `/TBSE` will overwrite the start and end times of the batch.
+
+
+
+
+<!-- Default settings for batch interfaces:
 
 Emerson batch interfaces `/UBR = false`
 
@@ -395,7 +420,7 @@ If `/UBR = false` the interface will use STATE CHANGE to control the start and e
 
 Provided for backward compatibility with version 1.0.0.0 of the interface.
 
-<!-- 
+
 ### `/WEBSRVDISABLED=[true | false]` 
 
 (Optional) If not added it will default to false.
@@ -410,6 +435,7 @@ Combine event frames from different interface instances. For an MES controlling 
 
 <<<<<<< HEAD
 For a BES interface controlling one or more MES systems, configure /readlink on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES /writelink setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. Link templates must also be configured to define which events specify a link. -->
-=======
+
+<!-- =======
 For a BES interface controlling one or more MES systems, configure `/readlink` on the MES interface and configure an interface instance for each BES, specifying the same linkage element in the BES `/writelink` setting. The MES interface will then create event frame references under the BES event frames that refer to the MES event frames. You must configure Link templates to define which events specify a link.
->>>>>>> 8e2a7c5c24ad8b8033a2f94be546d353ba252ecc
+>>>>>>> 8e2a7c5c24ad8b8033a2f94be546d353ba252ecc -->
