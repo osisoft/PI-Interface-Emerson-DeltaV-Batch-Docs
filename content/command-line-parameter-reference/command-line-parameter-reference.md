@@ -391,7 +391,7 @@ If both `/TBSE` and `/UBR` are set to TRUE, it is likely that `/TBSE` will overw
 
 ### `/ubr`
 
-Use Batch Recipe (`/UBR`) is a mechanism that allows the interface to enable or disable the use of the batch recipe view to generate PI Batch database objects. This is the batch processing logic.
+Use Batch Recipe (`/UBR`) is a mechanism that allows the interface to enable or disable the use of the batch recipe view to generate PI Batch database objects.
 
 You can configure `/UBR` in the .ini configuration file, on the command line, or on the Batch Setup tab in the PI Event Frames Interface Manager. By default, `/UBR` is set to false in the Emerson batch interfaces. 
 
@@ -399,7 +399,7 @@ When `/UBR = false`, the interface uses STATE CHANGE logic to control the start 
 
 When `/UBR = true`, the interface uses the Batch Recipe logic as opposed to the STATE CHANGE logic. The interface uses SYSTEM MESSAGE to control the start and end of event frames. Example system messages are BEGIN OF BATCH, END OF BATCH, UNIT PROCEDURE STARTED, and UNIT PROCEDURE ENDED.
 
-Additionally, there is a special SQL query you can use to handle daylight savings time across various time zones. The start time for the queried batch events is the ACTIVATETIME instead of the STARTTIME. The end time for the batch events the DEACTIVATETIME instead of ENDTIME. 
+Additionally, when UBR=TRUE, the start time for the queried batch events is the ACTIVATETIME instead of the STARTTIME. The end time for the batch events the DEACTIVATETIME instead of ENDTIME.
 
 **Note:** We do not recommend configuring both the UBR and the True Batch Start End (TBSE) command line parameters to TRUE at the same time. These parameters are independent from one another and are best utilized when run in separate configurations.
 
