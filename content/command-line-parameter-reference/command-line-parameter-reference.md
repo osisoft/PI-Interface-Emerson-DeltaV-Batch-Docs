@@ -385,10 +385,6 @@ If both `/TBSE` and `/UBR` are set to TRUE, it is likely that `/TBSE` will overw
 
 (Optional) Specifies how the interface interprets event timestamps from an SQL data source. Options are local time or GMT. Default is GMT.
 
-### `/uobev` (DeltaV SQL 9.3+ only)
-
-(Optional) Directs the interface to use the original batch event view. By default the interface queries 17 tables to retrieve data for batch-associated events. Note that this view does not provide explicit [Descript], [Pval] and [EU] fields. Instead the [Descript] field combines data from all three fields. This option is provided for backward compatibility.
-
 ### `/ubr`
 
 Use Batch Recipe (`/UBR`) is a mechanism that allows the interface to enable or disable the use of the batch recipe view to generate PI Batch database objects.
@@ -405,7 +401,15 @@ Additionally, when UBR=TRUE, the start time for the queried batch events is the 
 
 If both `/TBSE` and `/UBR` are set to TRUE, it is likely that `/TBSE` will overwrite the start and end times of the batch.
 
+### `/uidlist=<list>`
 
+(Optional) Recover specified manufacturing orders, then exit. Specify a comma-separated list of unique IDs for the manufacturing orders to be recovered. This parameter overrides any settings specified for the /rst and /ret recovery switches.
+
+Example: /uidlist=MOKey#1, MOKey#2
+
+### `/uobev` (DeltaV SQL 9.3+ only)
+
+(Optional) Directs the interface to use the original batch event view. By default the interface queries 17 tables to retrieve data for batch-associated events. Note that this view does not provide explicit [Descript], [Pval] and [EU] fields. Instead the [Descript] field combines data from all three fields. This option is provided for backward compatibility.
 
 
 <!-- Default settings for batch interfaces:
