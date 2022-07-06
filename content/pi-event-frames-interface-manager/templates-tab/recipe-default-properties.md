@@ -6,8 +6,6 @@ uid: BIF_RecipeDefaultProperties
 
 <!-- Topic requires customization for specific interface -->
 
-The following section lists the default recipe template settings for the batch and unit batch levels for Emerson DeltaV. 
-
 ## Batch Level
 The following are the recipe template default values for the BATCH level:
 
