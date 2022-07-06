@@ -45,6 +45,8 @@
       - topicUid: BIF_Triggers # No modifications
     - topicUid: BIF_PropertyTemplatesEFIM # No modifications
     - topicUid: BIF_RecipeTemplatesEFIM # No modifications
+      items:
+      - topicUid: BIF_RecipeDefaultProperties
     - topicUid: BIF_TagTemplatesEFIM # No modifications
   - topicUid: BIF_FiltersTab # No modification
   - topicUid: BIF_TimeSettingsTab # No modification
