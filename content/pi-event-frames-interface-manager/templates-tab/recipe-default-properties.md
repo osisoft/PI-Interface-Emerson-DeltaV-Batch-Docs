@@ -20,16 +20,20 @@ The following are the recipe template default values for the BATCH level:
 
 **Default Properties**
 
-[RECIPE] = 1
+[RECIPE]
 
-      .NAME = Recipe
-      .VALUE = [PROCEDURE|UNITPROCEDURE|OPERATION|Phase|PhaseState|PhaseStep]
+The index in the recipe template heirarchy corresponds to the RECIPE item default property (1).
 
-[PRODUCT] = 2
+      Recipe[1].DEFAULTPROPERTY[1].NAME = Recipe
+      Recipe[1].DEFAULTPROPERTY[1].VALUE = [PROCEDURE|UNITPROCEDURE|OPERATION|Phase|PhaseState|PhaseStep]
 
-      .NAME = Product
-      .VALUE = [pval]
-      .TRIGGER = [Event,value=\"Recipe Header\"][descript,value=\"Product Code\"]
+[PRODUCT]
+
+The index in the recipe template heirarchy corresponds to the PRODUCT item default property (2).
+
+      Product[2].DEFAULTPROPERTY[2].NAME = Product
+      Product[2].DEFAULTPROPERTY[2].VALUE = [pval]
+      Product[2].DEFAULTPROPERTY[2].TRIGGER = [Event,value="Recipe Header"][descript,value="Product Code"]
 
 ## Unit Batch Level
 The following are the recipe template default values for the UNIT BATCH level:
