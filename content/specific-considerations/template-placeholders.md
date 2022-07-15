@@ -11,7 +11,7 @@ The following sections list placeholders provided by the interface for defining 
 
 ## DeltaV Batch Historian
 
-| Placeholder | Relationship to Source Column | Source Column | View or Union of tables1 |
+| Placeholder | Relationship to Source Column | Source Column | View or Union of tables [^1] |
 | ----------- | ----------------------------- | ------------- | ------------------------ |
 | [AREA] | equivalent to | area | batcheventview |
 | [BATCHID] | equivalent to | batchID | batcheventview |
@@ -24,14 +24,15 @@ The following sections list placeholders provided by the interface for defining 
 | [PHASEMODULE] | equivalent to | phasemodule | batcheventview |
 | [PROCEDURE] | determined from equivalent to | action | batcheventview |
 | [PROCESSCELL] | equivalent to | processcell | batcheventview |
-| [PVAL] or [VALUE] |  | Paragraph | Union of tables2 | 
+| [PVAL] or [VALUE] |  | Paragraph | Union of tables[^2] | 
 | [UNIQUEID] | equivalent to | uniqueid | batcheventview |
 | [UNIT] | equivalent to | unit | batcheventview |
 | [UNITPROCEDURE] | determined from equivalent to | action | batcheventview |
 | [USERID] or [USER] | equivalent to | userName | batcheventview |
 
-1 Named view or union of tables as described in the topic: Emerson start and stop events
-2 Value appropriate to each table in the union of tables, for example: the value column of the BReportEvent table.
+[^1] Named view or union of tables as described in the topic: Emerson start and stop events
+
+[^2] Value appropriate to each table in the union of tables, for example: the value column of the BReportEvent table.
 
 For the **VALUE** setting and for **NAME** in property templates, the additional placeholders [TAG] and [TIME] are supported.
 
