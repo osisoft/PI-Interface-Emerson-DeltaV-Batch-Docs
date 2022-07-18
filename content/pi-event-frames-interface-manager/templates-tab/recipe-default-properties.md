@@ -2,7 +2,7 @@
 uid: BIF_RecipeDefaultProperties
 ---
 
-# Recipe templates defaults
+# Recipe templates default properties
 
 <!-- Topic requires customization for specific interface -->
 
@@ -44,13 +44,13 @@ The following are the recipe template default values for the UNIT BATCH level:
 | Value | [BatchID]
 | Product | [pval] |
 | Product Trigger | [Event,value=\"Recipe Header\"][descript,value=\"Product Code\"]) |
-| SearchByStartTime = true | 
-| SearchByEndTime = true |
+| SearchByStartTime | true |
+| SearchByEndTime | true |
 | Category | OSIBatch |
 | Template | UnitProcedure |
 | Module Path | [AREA]\\[PROCESSCELL]\\[UNIT])
 
-**Note** - When SearchByStartTime and SearchByEndTime equal true, we assume that there can be unitbatches with the same name.
+**Note** - Unitbatches can have the same name when SearchByStartTime and SearchByEndTime equal true.
 
 **Default Properties**
 
@@ -96,8 +96,8 @@ The following are the recipe template default values for the PHASE STATE level:
 | ----- | ----- |
 | Name | [PhaseState] 
 | SearchDirection | Reverse |
-| SearchByStartTime = true | 
-| SearchByEndTime = true |
+| SearchByStartTime | true | 
+| SearchByEndTime | true |
 | Category | OSIBatch |
 | Template | PhaseState |
 
