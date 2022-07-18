@@ -30,9 +30,8 @@ The following sections list placeholders provided by the interface for defining 
 | [UNITPROCEDURE] | determined from equivalent to | action | batcheventview |
 | [USERID] or [USER] | equivalent to | userName | batcheventview |
 
-[^1] Named view or union of tables as described in the topic: Emerson start and stop events
-
-[^2] Value appropriate to each table in the union of tables, for example: the value column of the BReportEvent table.
+[^1]: Named view or union of tables as described in the topic: Emerson start and stop events
+[^2]: Value appropriate to each table in the union of tables, for example: the value column of the BReportEvent table.
 
 For the **VALUE** setting and for **NAME** in property templates, the additional placeholders [TAG] and [TIME] are supported.
 
