@@ -24,7 +24,10 @@ The following sections list placeholders provided by the interface for defining 
 | [PHASEMODULE] | equivalent to | phasemodule | batcheventview |
 | [PROCEDURE] | determined from equivalent to | action | batcheventview |
 | [PROCESSCELL] | equivalent to | processcell | batcheventview |
-| [PVAL] or [VALUE] |  | Paragraph | Union of tables[^2] | 
+| [PVAL] or [VALUE] |  | Paragraph | Union of tables[^2] |
+| [TIME] | n/a | n/a | n/a |
+| [RECIPESTEP] | n/a | n/a | n/a |
+| [RECIPETYPE] | n/a | n/a | n/a |
 | [UNIQUEID] | equivalent to | uniqueid | batcheventview |
 | [UNIT] | equivalent to | unit | batcheventview |
 | [UNITPROCEDURE] | determined from equivalent to | action | batcheventview |
