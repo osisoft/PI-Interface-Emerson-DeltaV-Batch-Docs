@@ -1,60 +1,19 @@
-# OSIsoft Release Notes
+---
+uid: ReleaseNotes
+---
 
-## PI Web API 2021 SP3 1.17.0.200
+# Release Notes
 
-### ©2022 OSIsoft, LLC. All rights reserved
-
-## Table of Contents
-
-- [Overview]
-- [Fixes and Enhancements]
-  - [Fixes]
-  - [Enhancements]
-- [Known Issues]
-- [Setup]
-  - [Operating Systems]
-  - [Server Platforms]
-  - [Distribution Kit Files]
-  - [Installation and Upgrade]
-  - [Uninstalling PI Web API]
-- [Security Information and Guidance]
-  - [OSIsoft's Commitment]
-  - [Vulnerability Communication]
-  - [Vulnerability Scoring]
-  - [Overview of New Vulnerabilities Fixed or Mitigated]
-- [Documentation Overview]
-- [Technical Support and Resources]
+PI Web API 2021 SP3 
+1.17.0.200
 
 ## Overview
 
-The PI Web API is a RESTful service in the Developer Technologies suite,
-designed to provide cross-platform web and mobile programmatic interfaces to the
-PI System. The PI Web API presently contains basic functionality needed to
-retrieve and manipulate time series data from the PI Data Archive, Asset and
-Event Frame data from the PI Asset Framework, and to index and search on objects
-within the PI System.
+The PI Web API is a RESTful service in the Developer Technologies suite, designed to provide cross-platform web and mobile programmatic interfaces to the PI System. The PI Web API presently contains basic functionality needed to retrieve and manipulate time series data from the PI Data Archive, Asset and Event Frame data from the PI Asset Framework, and to index and search on objects within the PI System.
 
-The PI Web API belongs to the OSIsoft Developer Technologies family of products,
-which is designed to support the implementation of custom applications on top of
-the PI System, as well as the integration of PI System data with other
-applications and business systems such as Microsoft Office or SQL Server,
-Enterprise Resource Planning systems (ERPs), reporting and analytics platforms,
-web portals, geospatial and maintenance systems, just to name a few. The
-Developer Technologies cover a wide range of use cases in various environments,
-programming languages, operating systems, and infrastructures.
+The PI Web API belongs to the OSIsoft Developer Technologies family of products, which is designed to support the implementation of custom applications on top of the PI System, as well as the integration of PI System data with other applications and business systems such as Microsoft Office or SQL Server, Enterprise Resource Planning systems (ERPs), reporting and analytics platforms, web portals, geospatial and maintenance systems. The Developer Technologies cover a wide range of use cases in various environments, programming languages, operating systems, and infrastructures.
 
-## Fixes and Enhancements
-
-### Fixes
-
-This section lists items that were resolved or added in this release of PI Web API.
-
-| Work Item | Description                                                                     |
-| :-------- | :------------------------------------------------------------------------------ |
-| 320517    | Retrieving child Event Frames when path is ambiguous returns the wrong children |
-| 287966    | `InitializeSystemTimeZoneCache()` throws duplicated ID exception                |
-
-### Enhancements
+## Enhancements
 
 PI Web API 2021 SP3 introduces the following enhancements:
 
@@ -63,7 +22,16 @@ PI Web API 2021 SP3 introduces the following enhancements:
 - Process OMF CONTAINER Requests Using Non-Destructive Writes to DA
 - Add new PI Point query capabilities
 
-### Known Issues
+## Fixes
+
+This section lists items that were resolved or added in this release of PI Web API.
+
+| Work Item | Description                                                                     |
+| :-------- | :------------------------------------------------------------------------------ |
+| 320517    | Retrieving child Event Frames when path is ambiguous returns the wrong children |
+| 287966    | `InitializeSystemTimeZoneCache()` throws duplicated ID exception                |
+
+## Known Issues
 
 This section lists problems and enhancements that have been deferred until a future release.
 
@@ -95,22 +63,15 @@ This section lists problems and enhancements that have been deferred until a fut
 | N/A       | Security settings of 'Basic' or 'Anonymous' prevent crawler execution. There is a known issue with any security setting other than 'Kerberos' creating problems with the PI Web API Indexed Search crawler from executing. Workaround is to use 'Kerberos' security settings. No work item is assigned to address this issue.                                                                            |
 | N/A       | In a Remote Desktop Session to a Windows Server 2016 machine, the PI Web API Admin Utility can become unresponsive upon enumerating available SSL certificates. As a workaround, cause the Remote Desktop Session to lose focus (such as clicking outside the Remote Desktop Connection window), and then restore focus to the PI Web API Admin Utility. No work item is assigned to address this issue. |
 
-## Setup
+## System Requirements
 
 ### Operating Systems
 
-The preferred, supported deployment platforms are Windows Server 2022, Windows Server 2019, 
-Windows Server 2016 or Windows Server 2012 R2.
+The preferred, supported deployment platforms are Windows Server 2022, Windows Server 2019, Windows Server 2016 or Windows Server 2012 R2.
 
-Windows Server 2012 (Full Desktop Installation only) may also be used; however,
-use of Windows Server 2012 is discouraged, as planned enhancements to PI Web API
-will require functionality that is only available in later versions of Windows.
+Windows Server 2012 (Full Desktop Installation only) may also be used; however, use of Windows Server 2012 is discouraged, as planned enhancements to PI Web API will require functionality that is only available in later versions of Windows.
 
-Microsoft's client operating systems, Windows 11 (64-bit only) may be used in a
-limited capacity for development and testing purposes only. Please make sure
-that two entries "RegisteredOwner" and "RegisteredOrganization" exist under the
-Registry Key
-`HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion`. If
+Microsoft's client operating systems, Windows 11 (64-bit only) may be used in a limited capacity for development and testing purposes only. Please make sure that two entries "RegisteredOwner" and "RegisteredOrganization" exist under the Registry Key `HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion`. If
 not, add those two entries with empty string values.
 
 Earlier versions of Windows and non-x64 versions of Windows are not supported.
@@ -127,10 +88,9 @@ OMF:
 - PI Data Archive 2018 SP3 Patch 3 (3.4.440.477) or later is recommended.
 - PI AF Server 2018 SP3 Patch 3 (2.10.9.593) is recommended.
 
-Not all features, bug fixes, and performance enhancements may be available with
-older PI Data Archive or PI AF Servers.
+Not all features, bug fixes, and performance enhancements may be available with older PI Data Archive or PI AF Servers.
 
-### Distribution Kit Files
+## Distribution Kit Files
 
 The installer is released as a self-extracting distribution kit that contains:
 
@@ -328,50 +288,3 @@ The [PI Square](https://pisquare.osisoft.com/) community has resources to help
 you with your technical questions. [PI Developers
 Club](https://pisquare.osisoft.com/community/developers-club) program offers
 specific services to developers and system integrators.
-
-## Other Information
-
-<sup>OSIsoft, LLC</sup>
-
-<sup>1600 Alvarado Street</sup>
-
-<sup>San Leandro, CA 94577 USA</sup>
-
-<sup>Tel: (01) 510-297-5800</sup>
-
-<sup>Fax: (01) 510-357-8136</sup>
-
-<sup>Web: [http://www.osisoft.com](https://www.osisoft.com/)</sup>
-
-<sup>PI Web API</sup>
-
-<sup>© 2013-2022 by OSIsoft, LLC. All rights reserved.</sup>
-
-<sup>All rights reserved. No part of this publication may be reproduced,
-stored in a retrieval system, or transmitted, in any form or by any means,
-mechanical, photocopying, recording, or otherwise, without the prior written
-permission of OSIsoft, LLC.</sup>
-
-<sup>OSIsoft, the OSIsoft logo and logotype, Managed PI, OSIsoft Advanced Services,
-OSIsoft Cloud Services, OSIsoft Connected Services, OSIsoft EDS, PI ACE,
-PI Advanced Computing Engine, PI AF SDK, PI API, PI Asset Framework, PI Audit Viewer,
-PI Builder, PI Cloud Connect, PI Connectors, PI Data Archive, PI DataLink,
-PI DataLink Server, PI Developers Club, PI Integrator for Business Analytics,
-PI Interfaces, PI JDBC Driver, PI Manual Logger, PI Notifications, PI ODBC Driver,
-PI OLEDB Enterprise, PI OLEDB Provider, PI OPC DA Server, PI OPC HDA Server,
-PI ProcessBook, PI SDK, PI Server, PI Square, PI System, PI System Access, PI Vision,
-PI Visualization Suite, PI Web API, PI WebParts, PI Web Services, RLINK and RtReports
-are all trademarks of OSIsoft, LLC.</sup>
-
-<sup>All other trademarks or trade names used herein are the property of their
-respective owners.</sup>
-
-<sup>U.S. GOVERNMENT RIGHTS</sup>
-
-<sup>Use, duplication or disclosure by the US Government is subject to restrictions set
-forth in the OSIsoft, LLC license agreement and/or as provided in DFARS 227.7202
-DFARS 252.227-7013, FAR 12-212, FAR 52.227-19, or their successors, as applicable.</sup>
-
-<sup>Version: 1.17.0.200</sup>
-
-<sup>Published: 08/04/2022</sup>
