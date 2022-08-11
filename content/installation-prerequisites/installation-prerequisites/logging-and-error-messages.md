@@ -35,7 +35,10 @@ Specifies level of detail for logging as follows:
 * 2: Log all messages (most verbose
 * 3: Log all messages including Unirecord diagnostic message
 
+**Log properties**
 
+You can create the Source in the Windows Event Viewer by using the batch interface's source/log name (PIEMDVB) before initially starting the interface. After starting the interface, the Windows Event Viewer creates the Source automatically. 
 
+To change the log path, increase or decrease the maximum size of the log or modify how the log behaves after reaching the defined maximum event log size, open the Windows Event Viewer and locate the source/log name under *Applications and Services Log*. Right-click on the source/log name and select **Properties**. 
 
 
