@@ -75,7 +75,8 @@ subdirectory of the Interfaces directory under PIHOME64. For example, files for 
 
 ### PI Message Log
 
-The PI message log is the file to which OSIsoft interfaces (based on UniInt 4.5.0.x and later) write informational, debug and error messages. When a PI interface runs, it writes to the local PI message log. This message file can only be viewed using the PIGetMsg utility. See the Message Logs section of the PI Universal Interface (UniInt) User Guide for more information on how to access these messages. 
+The PI message log is the file to which OSIsoft interfaces based on UniInt 4.5.0.x and later write informational, debug and error messages. When a PI interface runs, it writes to the local PI message log. This message file 
+can only be viewed using the PIGetMsg utility. See the Message Logs section of the PI Universal Interface (UniInt) User Guide for more information on how to access these messages. 
 
 ### PI SDK
 
@@ -83,7 +84,8 @@ The PI SDK is a library of functions that allow applications to communicate and 
 
 ### PI Server Node
 
-In earlier documentation, the term "PI Server" was used as a nickname for the PI Data Archive and a PI Server node was a computer on which PI Data Archive programs were installed. While the PI Data Archive remains a core server of the PI Server product, the product name "PI Server" now refers to much more than the PI Data Archive. OSIsoft documentation, including this user manual, is changing to use "PI Server" in this broader sense and "PI Data Archive" to refer to the historian core. 
+In earlier documentation, the term "PI Server" was used as a nickname for the PI Data Archive and a PI Server node was a computer on which PI Data Archive programs were installed. While the PI Data Archive remains a core 
+server of the PI Server product, the product name "PI Server" now refers to much more than the PI Data Archive. OSIsoft documentation, including this user manual, is changing to use "PI Server" in this broader sense and "PI Data Archive" to refer to the historian core. 
 
 ### PI SMT
 
