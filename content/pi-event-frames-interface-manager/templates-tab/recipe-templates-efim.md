@@ -62,7 +62,7 @@ Specifies the value to be recorded. Use placeholders to include values from the 
 Configures the batch ID of the particular recipe object, overriding the incoming (default) batch ID. If you override the batch ID for the procedure, the batch ID is propagated to the child unit batches Batch ID field. For event frames, this template modifies the event frame name.
 
 <!-- Topic requires customization for Emerson Syncade and Wonderware -->
-In the Procedure level recipe template, the interface uses the Batch ID field for the name of the Event Frame if it is the top level of the batch hierarchy. If the Batch ID field is empty, an error is returned during recipe template processing.
+In the Procedure level recipe template, the interface uses the Batch ID field for the name of the Event Frame if it is the top level of the batch hierarchy. If the Batch ID field is empty, an error is returned during recipe template processing. If you are using a truncated Batch ID and the Batch ID field is not empty, the interface uses the Batch ID that matches the mask provided by the BIDM for the Batch ID. BIDM only shows noticeable difference in Event Frames that use the Batch ID field for their names. 
 
 In the Unit Procedure level recipe template, the interface uses the Name field for the name of the Event Frame based on the Batch Recipe (for example, level is s88_UnitBatch). The Batch ID field is an attribute/property in the Event Frame.
 
