@@ -41,6 +41,10 @@ To help manage workload and memory usage, defines the maximum time frame for que
 
 Specifies the maximum time allowed for the interface to properly shutdown. If the shutdown process takes longer than the specified time, the interface is forced to terminate immediately. The default value is 120 seconds.
 
+### Query Buffer Delay (/DELAYBUFFER)
+  
+Specifies the amount of time (in minutes) subtracted from the current time when calculating the next Query End Time. This configuration allows the system to catch recently closed batches that were missing from the latest database call. The default value is two minutes, but you can configure this delay up to 10 minutes. This is only applicable for real-time processing. 
+
 ### Use local time stamps to process incoming events (/TS)
 
 Specifies whether timestamps from an SQL data source are interpreted as local time or GMT. By default, timestamps are interpreted as GMT. 
