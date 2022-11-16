@@ -39,7 +39,6 @@ This interface is exclusively built in 64-bit.
 | Supports Questionable Bit | No |
 | Supports Multi-character Pointsource | Yes |
 | Maximum Point Count | No maximum |
-| Uses PI SDK | Yes: version 1.3.4.333 or higher required|
 | Uses AF SDK | Yes: version 2.5.x or higher required |
 | PINet String Support | N/A |
 | Source of Timestamps | BES (not system time on interface node) |
