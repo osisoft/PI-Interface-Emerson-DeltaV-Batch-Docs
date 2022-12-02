@@ -47,9 +47,8 @@ Specifies the amount of time (in minutes) subtracted from the current time when 
 
 The default value is two minutes, but you can configure the amount of time to a maximum of 10 minutes. To disable the configuration, set the /DELAYBUFFER to zero (0) in the INI file. 
 
-This configuration is only applicable for real-time processing. 
+This configuration is used in both real-time and history recovery mode but only applies to interface configurations where the end time for data recovery (/ret) is not defined.  
  
-
 ### Use local time stamps to process incoming events (/TS)
 
 Specifies whether timestamps from an SQL data source are interpreted as local time or GMT. By default, timestamps are interpreted as GMT. 
