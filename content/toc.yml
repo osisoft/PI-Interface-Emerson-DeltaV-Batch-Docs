@@ -64,5 +64,5 @@
 - topicUid: BIF_DiagnosticPointReference # No modifications
 # Glossary
 - topicUid: BIF_Glossary
-# Technical Support and Feedback
-- topicUid: BIF_TechnicalSupportAndFeedback
+# Release Notes
+- topicUid: ReleaseNotes
