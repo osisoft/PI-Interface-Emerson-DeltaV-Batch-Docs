@@ -25,6 +25,7 @@
     - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications
   - topicUid: BIF_TemplatesForMappingDataSourceEvents # No modifications
   - topicUid: BIF_HowBatchDataIsStored # No modifications
+  - topicUid: BIF_batchlistmanagement
 # Specific Considerations
 - topicUid: BIF_Interface # Customized for DeltaV
   items:
