@@ -6,13 +6,13 @@ uid: ReleaseNotes
 
 PI Interface for Emerson DeltaV Batch
 
-**Version 5.1.0.999**
+**Version 5.1.0.6**
 
 ## Overview
 
 The PI Interface for Emerson DeltaV Batch (EMDVB) creates batches in the PI Batch Database or Event Frames in PI AF database based on data from SQL data sources or EVT files. The interface automatically creates PI Tags and an AF Hierarchy to capture context around your process data.
 
-The release is a maintenance release that focuses on improving the stability and usability of the interface.
+The 5.1.0.6 release is a maintenance release that focuses on improving the stability and usability of the interface.
 
 ## Enhancements
 
@@ -52,9 +52,6 @@ This section lists items that were resolved or added in this release of PI Inter
 | 23177     | BifConfig now stores RST and RET as UTC Note that they can be edited in a local friendly time string and read into the interface correctly. When written by the configuration program, they will write the times out as UTC and a local time string as a comment. |
 | 23299     | EMDVB fetches SQL data with greater efficiency. EMDVB gathers SQL data for lists of batches rather than querying each batch's data individually, and reuses the same SQL connection for all queries. |
 | 24361     | All boost library calls were replaced with native C++ and STL functions. |
-| 24594     | Replaced boost library find and replace string function with new custom function. |
-| 24616     | Removed dependence on boost libraries for file and path operations. |
-| 24643     | Replaced boost tokenizer call as part of removing usage of boost library. |
 | 24661     | Boost is no longer used for JSON processing. Microsoft Net library replaces it. |
 | 24781     | The interface setup kit is using the same GUID for all the interface. This causes trouble when installing another batch interface on the same machine. Fixed to use different GUID for each interface. |
 | 24847     | SQL Native Client is no longer supported, and is now replaced with OLEDB for all supported batch interfaces. |
@@ -91,19 +88,18 @@ This interface is a 64-bit application.
 
 | Product   | Software Version  |
 | :-------- | :------------------ |
-| Microsoft .NET Framework 4.8 | 4.8.3761 |
-| OSIsoft MS VB Runtime Redistributables |  1.0.1 |
+| Microsoft OLE DB Driver | 19.2.0 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x86) | 14.21.27702 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x64) | 14.21.27702 |
 | PI AF Client 2018 SP3 Patch 3 | 2.10.9.593 |
-| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.999 |
+| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.6 |
 | PI Network Subsystem Support (PINS)* | 3.4.435.538 |
   
 *The PI Network Subsystem Support (PINS) component is not displayed on the installation welcome screen if the PI Data Archive is installed already.
 
 ### Installation and Upgrade
 
-The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.999_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
+The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.6_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
 For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch (PIBatchGuide) User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
@@ -111,46 +107,10 @@ For additional information regarding the PI Interface for Emerson DeltaV Batch i
 
 The PI Interface for Emerson DeltaV Batch Interface can be uninstalled using the *Programs and Features* list accessible from the *Windows Control Panel*. After accessing the Programs and Features list, select the entry named *PI Interface for Emerson DeltaV Batch (EMDVB)* and then select *Uninstall* from the menu.
 
-## Security Information and Guidance
+## Security information and guidance
 
-### OSIsoft's Commitment
+OSIsoft is [committed to releasing secure products](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html). This section is intended to provide relevant security-related information to guide your installation or upgrade decision.  
 
-Because the PI System often serves as a barrier protecting control system networks and mission-critical infrastructure assets, OSIsoft is committed to (1) delivering a high-quality product and (2) communicating clearly what security issues have been addressed. This release of the PI Interface for Emerson DeltaV Batch is the highest-quality and most secure version of the PI Interface for Emerson DeltaV Batch released to date. OSIsoft's commitment to improving the PI System is ongoing, and each future version should raise the quality and security bar even further.
+OSIsoft [proactively discloses](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-communication) aggregate information about the number and severity of security vulnerabilities addressed in each release. The tables below provide an overview of security issues addressed and their relative severity based on [standard scoring](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-scoring). 
 
-### Vulnerability Communication
-
-The practice of publicly disclosing internally discovered vulnerabilities is consistent with the [Common Industrial Control System Vulnerability Disclosure
-Framework](https://us-cert.cisa.gov/sites/default/files/ICSJWG-Archive/ICSJWG_Vulnerability_Disclosure_Framework_Final_1.pdf) developed by the [Industrial Control Systems Joint Working Group (ICSJWG)](https://us-cert.cisa.gov/ics/Industrial-Control-Systems-Joint-Working-Group-ICSJWG). Despite the increased risk posed by greater transparency, OSIsoft is sharing this information to help you make an informed decision about when to upgrade to ensure your PI System has the best available protection.
-
-For more information, refer to [OSIsoft's Ethical Disclosure policy](https://www.osisoft.com/terms-and-conditions/ethical-disclosure).
-
-To report a security vulnerability, refer to:
-[https://www.osisoft.com/terms-and-conditions/report-security](https://www.osisoft.com/terms-and-conditions/report-security)
-
-### Vulnerability Scoring
-
-OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://www.first.org/cvss/v2/guide) to quantify the severity of security vulnerabilities for disclosure. To calculate the CVSS scores, OSIsoft uses the [National Vulnerability Database (NVD) calculator](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator?calculator&version=2) maintained by the National Institute of Standards and Technology (NIST). 
-
-OSIsoft uses Critical, High, Medium and Low categories to aggregate the CVSS Base scores. This removes some of the opinion related errors of CVSS scoring. As noted in the [CVSS specification](https://www.first.org/cvss/specification-document), Base scores range from 0 for the lowest severity to 10 for the highest severity.
-
-### Overview of New Vulnerabilities Found or Fixed
-
-This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft proactively discloses aggregate information about the number and severity of the security vulnerabilities that are fixed in this release of the PI Interface for Emerson DeltaV Batch.
-
-No security-related information is applicable to this release.
-
-## Technical Support and Resources
-
-For technical assistance, contact OSIsoft Technical Support at +1 510-297-5828 or log a case through the OSIsoft Customer Portal. Additionally, the Contact Us
-page on the portal offers contact options for customers outside of the United States. 
-
-When you contact OSIsoft Technical Support, be prepared to provide this information:
-
-- Product name, version, and build numbers
-- Computer platform (CPU type, operating system, and version number)
-- Time that the difficulty started
-- Log files at that time
-- Details of any environment changes prior to the start of the issue
-- Summary of the issue, including any relevant log files during the time the issue occurred
-
-The [PI Square](https://pisquare.osisoft.com/) community has resources to help you with your technical questions. [PI Developers Club](https://pisquare.osisoft.com/community/developers-club) program offers specific services to developers and system integrators.
+There are no security vulnerabilities in this release. 
