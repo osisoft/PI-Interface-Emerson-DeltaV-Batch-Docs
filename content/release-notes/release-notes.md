@@ -64,6 +64,7 @@ This section lists items that were resolved or added in this release of PI Inter
 | 67298     | Event sorting is faster and memory consumption is better managed during event queuing. |
 | 67926     | Interface will not allow Batch events with a zero start time. |
 | 68207     | BifConfig will now store SCAN values as low as one second without complaint. |
+| 68907     | Default account to setup interface service is now Default Virtual User (NT Service/<Interface Instance Name>). |
 
 ## Known Issues
 
