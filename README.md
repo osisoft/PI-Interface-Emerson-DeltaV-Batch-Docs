@@ -6,7 +6,7 @@ This repository consumes another repo as a subtree within the /content directory
 
 `git subtree pull --prefix content https://github.com/osisoft/PI-Batch-Interface-Doc-Framework main --squash`
 
-License © 2019 - 2022 OSIsoft, LLC. All rights reserved.
+License © 2019 - 2023 OSIsoft, LLC. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
