@@ -6,13 +6,13 @@ uid: ReleaseNotes
 
 PI Interface for Emerson DeltaV Batch
 
-**Version 5.1.0.6**
+**Version 5.1.0.9**
 
 ## Overview
 
 The PI Interface for Emerson DeltaV Batch (EMDVB) creates batches in the PI Batch Database or Event Frames in PI AF database based on data from SQL data sources or EVT files. The interface automatically creates PI Tags and an AF Hierarchy to capture context around your process data.
 
-The 5.1.0.6 release is a maintenance release that focuses on improving the stability and usability of the interface.
+The 5.1.0.9 release is a maintenance release that focuses on improving the stability and usability of the interface.
 
 ## Enhancements
 
@@ -92,7 +92,7 @@ This interface is a 64-bit application.
 | Microsoft Visual C++ 2015-2019 Redistributable (x86) | 14.21.27702 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x64) | 14.21.27702 |
 | PI AF Client 2018 SP3 Patch 3 | 2.10.9.593 |
-| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.6 |
+| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.9 |
 | PI Network Subsystem Support (PINS)* | 3.4.435.538 |
   
 *The PI Network Subsystem Support (PINS) component is not displayed on the installation welcome screen if the PI Data Archive is installed already.
