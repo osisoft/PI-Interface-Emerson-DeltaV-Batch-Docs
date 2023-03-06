@@ -29,6 +29,7 @@
     - topicUid: BIF_EquipmentHierarchy # No modifications required
     - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications required
     - topicUid: BIF_PlaceholdersAndAdvancedParsing
+  - topicUid: BIF_batchlistmanagement
   - topicUid: BIF_TemplatesForMappingDataSourceEvents  
     items:
     - topicUid: BIF_TagTemplates
