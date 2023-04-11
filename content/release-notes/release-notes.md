@@ -6,13 +6,13 @@ uid: ReleaseNotes
 
 PI Interface for Emerson DeltaV Batch
 
-**Version 5.1.0.10**
+**Version 5.1.0.15**
 
 ## Overview
 
 The PI Interface for Emerson DeltaV Batch (EMDVB) creates batches in the PI Batch Database or Event Frames in PI AF database based on data from SQL data sources or EVT files. The interface automatically creates PI Tags and an AF Hierarchy to capture context around your process data.
 
-The 5.1.0.10 release is a maintenance release that focuses on improving the stability and usability of the interface.
+The 5.1.0.15 release is a maintenance release that focuses on improving the stability and usability of the interface.
 
 ## Enhancements
 
@@ -92,14 +92,14 @@ This interface is a 64-bit application.
 | Microsoft Visual C++ 2015-2019 Redistributable (x86) | 14.21.27702 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x64) | 14.21.27702 |
 | PI AF Client 2018 SP3 Patch 3 | 2.10.9.593 |
-| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.10 |
+| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.15 |
 | PI Network Subsystem Support (PINS)* | 3.4.435.538 |
   
 *The PI Network Subsystem Support (PINS) component is not displayed on the installation welcome screen if the PI Data Archive is installed already.
 
 ### Installation and Upgrade
 
-The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.10_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
+The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.15_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
 For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch (PIBatchGuide) User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
