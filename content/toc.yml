@@ -27,8 +27,11 @@
   - topicUid: BIF_EquipmentArbitrationEventsUnavailable # No modifications required
   - topicUid: BIF_HowBatchDataIsStored # Modify for interface
     items: 
-    - topicUid: BIF_ThePIBatchDatabase # No modifications required
-    - topicUid: BIF_EventFrames # No modifications required
+    - topicUid: BIF_InterfaceModes # No modifications required
+    - topicUid: BIF_HowBatchDataIsStored # Modify for interface
+    - topicUid: BIF_batchlistmanagement
+      items:
+      - topicUid: BIF_EventFrames # No modifications required
     - topicUid: BIF_EquipmentHierarchy # No modifications required
     - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications required
     - topicUid: BIF_PlaceholdersAndAdvancedParsing
@@ -80,7 +83,12 @@
 # Initialization File
 - topicUid: BIF_InitializationFileReference # Customized for DeltaV
   items: 
-  - topicUid: BIF_InitializationFileExamples # Customized for DeltaV
+  - topicUid: BIF_sourcetemplatesettings
+  - topicUid: BIF_Recipetemplates
+  - topicUid: BIF_Tagtemplates
+  - topicUid: BIF_Propertytemplates
+  - topicUid: BIF_Translationtemplates
+  - topicUid: BIF_InitializationFileExamples # Modify for interface
 # Diagnostic Point Reference
 - topicUid: BIF_DiagnosticPointReference # No modifications
 # Glossary
