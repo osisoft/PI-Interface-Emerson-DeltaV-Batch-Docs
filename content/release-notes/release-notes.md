@@ -110,7 +110,7 @@ This interface is a 64-bit application.
 
 The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.16_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
-For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch (PIBatchGuide) User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
+For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
 ### Uninstalling PI Web API
 
