@@ -6,19 +6,21 @@ uid: ReleaseNotes
 
 PI Interface for Emerson DeltaV Batch
 
-**Version 5.1.0.15**
+**Version 5.1.0.16**
 
 ## Overview
 
 The PI Interface for Emerson DeltaV Batch (EMDVB) creates batches in the PI Batch Database or Event Frames in PI AF database based on data from SQL data sources or EVT files. The interface automatically creates PI Tags and an AF Hierarchy to capture context around your process data.
 
-The 5.1.0.15 release is a maintenance release that focuses on improving the stability and usability of the interface.
+The 5.1.0.16 release is a maintenance release that focuses on improving the stability and usability of the interface.
 
-## Enhancements
+## Fixes and Enhancements
+
+### Enhancements
 
 There are no enhancements for this release.
 
-## Fixes
+### Fixes
 
 This section lists items that were resolved or added in this release of PI Interface for Emerson Delta V.
 
@@ -51,19 +53,30 @@ This section lists items that were resolved or added in this release of PI Inter
 | 22464     | For interfaces with a version 5.0.0 or greater, PI Event Frames Interface manager nows tail the windows event viewer instead of PI Message log. |
 | 23177     | BifConfig now stores RST and RET as UTC Note that they can be edited in a local friendly time string and read into the interface correctly. When written by the configuration program, they will write the times out as UTC and a local time string as a comment. |
 | 23299     | EMDVB fetches SQL data with greater efficiency. EMDVB gathers SQL data for lists of batches rather than querying each batch's data individually, and reuses the same SQL connection for all queries. |
-| 24361     | All boost library calls were replaced with native C++ and STL functions. |
-| 24661     | Boost is no longer used for JSON processing. Microsoft Net library replaces it. |
 | 24781     | The interface setup kit is using the same GUID for all the interface. This causes trouble when installing another batch interface on the same machine. Fixed to use different GUID for each interface. |
 | 24847     | SQL Native Client is no longer supported, and is now replaced with OLEDB for all supported batch interfaces. |
 | 25811     | PI data server collectives and PI buffering to multiple PI data servers is now supported. |
 | 26756     | With the release of version 5, if you have a batch interface supported batch database, it will no longer be able to write to PIBatch Database. Version 5  only supports Event Frames Customers who need to write to PIBatch. The database needs to stay with Version 4.x.x.x Batch Interfaces. |
+| 50935     | Addressed advanced parsing issue when using LBE ("Left Bound Exclusive"). |
+| 52120     | Whenever an interface becomes the primary, it will use the /RST command line switch as the start date and process the batches. |
 | 67289     | UniRecord exports now include all UniRecord fields. |
 | 67298     | Event sorting is faster and memory consumption is better managed during event queuing. |
 | 67926     | Interface will not allow Batch events with a zero start time. |
 | 68207     | BifConfig will now store SCAN values as low as one second without complaint. |
 | 68907     | Default account to setup interface service is now Default Virtual User (NT Service/<Interface Instance Name>). |
+| 69287     | Updated the PI Event Frames Interface Manager utility to only allow TagPath properties to be set on Asset Templates and Property Templates. Fixed issue where the TAGPATH value was not being saved properly. |
+| 69486     | All attributes are now created on the correct event frame. |
+| 69854     | Fixes minor failover issues and includes a health tag that can be used to monitor failover status. |
+| 70398     | Float tag values are now evaluated correctly. |
+| 70403     | Message logging includes exception data. |
+| 72522     | Interface stability improvements. |
+| 73489     | Interface no longer hangs due to locale thread lock issue. |
+| 73498     | Setup kit creates the event source name under application logs to match with interface application name, which is used by logging framework. |
+| 75880     | Procedure level recipe events are processed correctly and have no missing end times. |
+| 76997     | Logging added in incomplete data situations such as true batch start not set, no name alias set, unit not set, and matching arbitration event not found. |
+| 77832     | Source queries no longer fail when querying over one thousand batches at once. |
 
-## Known Issues
+### Known Issues
 
 There are no known issues for this release.
 
@@ -78,30 +91,26 @@ This interface is a 64-bit application.
 | Windows Server 2022 (64-bit) | Yes |
 | Windows Server 2019 (64-bit) | Yes | 
 | Windows Server 2016 (64-bit) | Yes | 
-| Windows Server 2012 R2 SP1 (64-bit) | Yes | 
-| Windows Server 2012 (64-bit) | Yes | 
 | Windows 11 (64-bit) | Yes | 
 | Windows 10 (64-bit) | Yes | 
-| Windows 8.1 (64-bit)| Yes | 
   
 ## Distribution Kit Files
 
 | Product   | Software Version  |
 | :-------- | :------------------ |
-| Microsoft OLE DB Driver | 19.2.0 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x86) | 14.21.27702 |
 | Microsoft Visual C++ 2015-2019 Redistributable (x64) | 14.21.27702 |
-| PI AF Client 2018 SP3 Patch 3 | 2.10.9.593 |
-| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.15 |
+| PI AF Client 2018 SP3 Patch 4 | 2.10.10.2539 |
+| PI Interface for Emerson DeltaV Batch (EMDVB) | 5.1.0.16 |
 | PI Network Subsystem Support (PINS)* | 3.4.435.538 |
   
 *The PI Network Subsystem Support (PINS) component is not displayed on the installation welcome screen if the PI Data Archive is installed already.
 
 ### Installation and Upgrade
 
-The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.15_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
+The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the PI Interface for Emerson DeltaV Batch installation kit, EMDVB_5.1.0.16_.exe. This installation kit can be obtained by using the How to Download Products link listed in the OSIsoft Customer Portal How To's list. This list is located on the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
-For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch (PIBatchGuide) User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
+For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
 ### Uninstalling PI Web API
 
@@ -112,5 +121,7 @@ The PI Interface for Emerson DeltaV Batch Interface can be uninstalled using the
 We are [committed to releasing secure products](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html). This section is intended to provide relevant security-related information to guide your installation or upgrade decision.  
 
 We [proactively disclose](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-communication) aggregate information about the number and severity of security vulnerabilities addressed in each release. The tables below provide an overview of security issues addressed and their relative severity based on [standard scoring](https://docs.osisoft.com/bundle/security-commitment-and-disclosure-standards/page/securitycommitmentanddisclosurestandards.html#vulnerability-scoring). 
+
+No security-related information is applicable to this release. 
 
 There are no security vulnerabilities in this release. 
