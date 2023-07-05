@@ -112,7 +112,7 @@ The PI Interface for Emerson DeltaV Batch can be installed or upgraded using the
 
 For additional information regarding the PI Interface for Emerson DeltaV Batch installation, please see the Installation instructions portion of the PI Interface for Emerson DeltaV Batch User Guide. This user guide is available for download from the [OSIsoft Customer Portal](https://my.osisoft.com/).
 
-### Uninstalling PI Web API
+### Uninstalling PI Interface for Emerson DeltaV Batch Interface
 
 The PI Interface for Emerson DeltaV Batch Interface can be uninstalled using the *Programs and Features* list accessible from the *Windows Control Panel*. After accessing the Programs and Features list, select the entry named *PI Interface for Emerson DeltaV Batch (EMDVB)* and then select *Uninstall* from the menu.
 
