@@ -10,9 +10,11 @@ PI Interface for Emerson DeltaV Batch
 
 ## Overview
 
-The PI Interface for Emerson DeltaV Batch (EMDVB) creates batches in the PI Batch Database or Event Frames in PI AF database based on data from SQL data sources or EVT files. The interface automatically creates PI Tags and an AF Hierarchy to capture context around your process data.
+PI Interface for Emerson DeltaV captures batch, manufacturing, and process data from an Emerson DeltaV System. The interface collects data from a DeltaV SQL server or EVT files, converts this data to PI tags and PI batch properties, and stores the collected data as event frames and elements within PI Asset Framework (PI AF). You can use tag templates to control PI point creation and event population. All modules, tags, tag aliases, and health tags are automatically created on the PI server.
 
-The 5.1.0.16 release is a maintenance release that focuses on improving the stability and usability of the interface.
+The 5.1.0.16 release of PI Interface for Emerson DeltaV Batch internally replaces PI SDK with AF SDK - this improves the security, robustness, and communication capabilities of the interface. As a result, this interface only writes Event Frames to a PI AF Server, and disallows creating PI Batches in the PI Batch Database.
+
+Users creating PI Batches in the PI Batch Database need to migrate to Event Frames in order to utilize this version of the interface.
 
 ## Fixes and Enhancements
 
