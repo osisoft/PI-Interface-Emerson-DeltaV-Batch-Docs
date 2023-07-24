@@ -22,11 +22,9 @@
 # How Batch Interfaces Work
 - topicUid: BIF_HowBatchInterfacesWork # No modifications required
   items:
-  - topicUid: BIF_InterfaceModes # No modifications required
   - topicUid: BIF_HowInterfacesProcessBatchEventData # No modifications required
-  - topicUid: BIF_EquipmentArbitrationEventsUnavailable # No modifications required
-  - topicUid: BIF_HowBatchDataIsStored # Modify for interface
     items: 
+    - topicUid: BIF_EquipmentArbitrationEventsUnavailable # No modifications required
     - topicUid: BIF_InterfaceModes # No modifications required
     - topicUid: BIF_HowBatchDataIsStored # Modify for interface
     - topicUid: BIF_batchlistmanagement
@@ -35,7 +33,6 @@
     - topicUid: BIF_EquipmentHierarchy # No modifications required
     - topicUid: BIF_LinkingBESToMESBatchesUsingEventFrames # No modifications required
     - topicUid: BIF_PlaceholdersAndAdvancedParsing
-  - topicUid: BIF_batchlistmanagement
   - topicUid: BIF_TemplatesForMappingDataSourceEvents  
     items:
     - topicUid: BIF_TagTemplates
